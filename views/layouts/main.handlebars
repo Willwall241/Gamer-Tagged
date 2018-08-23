@@ -3,13 +3,48 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <link rel="stylesheet" href="assets/css/profileStyle.css">
   <title>Home Page</title>
 </head>
 
 <body>
-  {{{body}}}
+  <main>
+    <nav>
+      <div class="nav-wrapper hf-color">
+
+        <a href="#!" class="brand-logo">
+          <i class="material-icons icon">videogame_asset</i>Gamer Tagged</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a class="waves-effect waves-light btn" id="signout-btn">Log Out</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    {{{body}}}
+
+  </main>
+  <footer class="page-footer hf-color">
+    <div class="footer-copyright">
+      <div class="container">
+        &copy; Copyright
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
 </body>
 
 </html>

@@ -1,29 +1,175 @@
 <div id="home">
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+      <div class="col s8 offset-2">
+        <div class="container">
+      <div class="row main-content">
+        <div class="col s12 m12 l6">
+          <!-- Profile login/Create profile card -->
+          <div class="card card-color z-depth-5 login-style">
+            <div class="card-content">
+              <div class="row ">
+                <form class="col s12">
+
+                  <span class="card-title">Profile Login</span>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="login-email" type="email" class="validate">
+                      <label for="login-email">Email</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="login-password" type="password" class="validate">
+                      <label for="login-password">Password</label>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+            <div class="card-action loginBtn-style">
+              <button class="btn waves-effect waves-light" type="submit" name="action" id="login-btn">Submit
+                <i class="material-icons right">send</i>
+              </button>
+              <button class="btn waves-effect waves-light createBtn-style" type="submit" name="action" id="profile-modal">Create Profile
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+
+        </div>
+
+
+        <div class="col s12 m8 offset-m2 l6 carousel-style">
+          <!-- Carousel of images -->
+          <div class="carousel carousel-slider z-depth-5">
+            <a class="carousel-item" href="#one!">
+              <img src="assets/images/gameretroimg.jpg">
+              <h4>Befriend Fellow Gamers</h4>
+            </a>
+            <a class="carousel-item" href="#two!">
+              <img class="responsive-img" src="assets/images/threegamers.jpg">
+              <h4>Plan Game Nights With Friends</h4>
+            </a>
+            <a class="carousel-item" href="#three!">
+              <img class="responsive-img" src="assets/images/overwatch.png">
+              <h4>Find Reliable Teammates</h4>
+            </a>
+            <a class="carousel-item" href="#four!">
+              <img class="responsive-img" src="assets/images/gow.jpg">
+              <h4>Tell Your Story</h4>
+            </a>
+            <a class="carousel-item" href="#five!">
+              <img class="responsive-img" src="assets/images/skyrim.jpg">
+              <h4>Share Tips and Tricks</h4>
+            </a>
           </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <div id="modal1" class="modal">
+    <!-- Character length modal -->
+    <div class="modal-content">
+      <h3>Create Profile</h3>
+      <form class="formValidate" id="formValidate" method="get" action="" class="col s12">
+        <span class="card-title">Create User Profile</span>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="firstname" name="firstname" type="text">
+            <label for="firstname">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="lastname" name="lastname" type="text">
+            <label for="lastname">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="username" name="username" type="text">
+            <label for="username">Username</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="email" name="email" type="email">
+            <label for="email">Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="id_pwd" name="pwd" type="password">
+            <label for="id_pwd">Password</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="id_conf_pwd" name="conf_pwd" type="password">
+            <label for="id_conf_pwd">Confirm Password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="psn-name" type="text">
+            <label for="psn-name">PSN Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="gamer-tag" type="text">
+            <label for="gamer-tag">Xbox Gamer Tag</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input placeholder="Enter Vanity URL" id="steam-name" type="text" class="validate">
+            <label for="steam-name">Steam Name</label>
+            <button class="btn waves-effect waves-light" type="submit" name="action" id="get-steam">Find Steam Id
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="submit-btn">Submit</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Floating Action Button -->
+  <div class="fixed-action-btn">
+    <a href="#" class="btn-floating  btn-large">
+      <i class="large material-icons">add</i>
+    </a>
+    <ul>
+      <!-- Link to index page -->
+      <li>
+        <a href="index.html" class="btn-floating deep-purple btn-large">
+          <i class="large material-icons">home</i>
+        </a>
+      </li>
+      <!-- Link to Profile page -->
+      <li>
+        <a href="profile.html" class="btn-floating indigo accent-3 btn-large">
+          <i class="large material-icons">face</i>
+        </a>
+      </li>
+      <!-- Link to Library page -->
+      <li>
+        <a href="library.html" class="btn-floating cyan darken-4 btn-large">
+          <i class="large material-icons">library_add</i>
+        </a>
+        <!-- Link to AboutUs page -->
+        <li>
+          <a href="aboutUs.html" class="btn-floating teal darken-1 btn-large">
+            <i class="large material-icons">videogame_asset
+            </i>
+          </a>
+        </li>
+      </li>
+    </ul>
+  </div>
       </div>
     </div>
   </div>
