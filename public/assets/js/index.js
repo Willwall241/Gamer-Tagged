@@ -1,6 +1,8 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $userName = $("#username-input");
+var $firstName = $("#first-name-input");
+var $lastName = $("#last-name-input");
+var $email = $("#email-input");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
@@ -12,19 +14,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/example",
       data: JSON.stringify(example)
     });
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/example",
       type: "GET"
     });
   },
   deleteExample: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/example/" + id,
       type: "DELETE"
     });
   }
@@ -36,12 +38,12 @@ var refreshExamples = function() {
     var $examples = data.map(function(example) {
       var $a = $("<a>")
         .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .attr("href", "/profile/" + profile.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": profile.id
         })
         .append($a);
 
@@ -64,22 +66,26 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var user = {
+    userName: $userName.val().trim(),
+    firstName: $firstName.val().trim(),
+    lastName: $lastName.val().trim(),
+    email: $email.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
+  // if (!(example.text && example.description)) {
+  //   alert("You must enter an example text and description!");
+  //   return;
+  // }
 
-  API.saveExample(example).then(function() {
+  API.saveExample(user).then(function() {
     refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  $userName.val("");
+  $firstName.val("");
+  $lastName.val("");
+  $email.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked

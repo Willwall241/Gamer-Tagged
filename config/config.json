@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "exampledb",
+    "database": "GTdb_users",
     "host": "localhost",
     "dialect": "mysql"
   },
