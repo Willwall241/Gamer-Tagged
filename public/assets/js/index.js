@@ -1,7 +1,7 @@
 // Get references to page elements
-var $userName = $("#username-input");
-var $firstName = $("#first-name-input");
-var $lastName = $("#last-name-input");
+var $userName = $("#user-name");
+var $firstName = $("#first-name");
+var $lastName = $("#last-name");
 var $email = $("#email-input");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
@@ -14,7 +14,7 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/example",
+      url: "/",
       data: JSON.stringify(example)
     });
   },
@@ -33,33 +33,33 @@ var API = {
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/profile/" + profile.id);
+// var refreshExamples = function() {
+//   API.getExamples().then(function(data) {
+//     var $examples = data.map(function(example) {
+//       var $a = $("<a>")
+//         .text(example.text)
+//         .attr("href", "/profile/" + profile.id);
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": profile.id
-        })
-        .append($a);
+//       var $li = $("<li>")
+//         .attr({
+//           class: "list-group-item",
+//           "data-id": profile.id
+//         })
+//         .append($a);
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+//       var $button = $("<button>")
+//         .addClass("btn btn-danger float-right delete")
+//         .text("ｘ");
 
-      $li.append($button);
+//       $li.append($button);
 
-      return $li;
-    });
+//       return $li;
+//     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
+//     $exampleList.empty();
+//     $exampleList.append($examples);
+//   });
+// };
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
@@ -78,9 +78,7 @@ var handleFormSubmit = function(event) {
   //   return;
   // }
 
-  API.saveExample(user).then(function() {
-    refreshExamples();
-  });
+  API.saveExample(user);
 
   $userName.val("");
   $firstName.val("");
