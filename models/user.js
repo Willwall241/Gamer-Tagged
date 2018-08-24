@@ -1,21 +1,21 @@
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("GTdb_user", {
+  var User = sequelize.define("User", {
     userName: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [4]
       }
     },
     firstName: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [2]
       }
     },
     lastName: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: true,
       validate: {
         len: [2]
