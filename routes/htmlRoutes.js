@@ -4,7 +4,7 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.User.findAll({}).then(function(GTdb_user) {
-      res.render("indexTest", {
+      res.render("index", {
         msg: "Welcome!",
         examples: GTdb_user
       });
