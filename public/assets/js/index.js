@@ -10,7 +10,7 @@ var $gamelibrary = $("#search-game");
 
 // Get references to library search
 var $gameSearch = $("#search-input");
-var keys = $("keys.js");
+var keys = require("keys.js");
 
 console.log(keys.giantBomb);
 // The API object contains methods for each kind of request we'll make
@@ -25,9 +25,9 @@ var API = {
       data: JSON.stringify(example)
     });
   },
-  getExamples: function() {
+  getProfile: function(id) {
     return $.ajax({
-      url: "api/example",
+      url: "api/profile/" + id,
       type: "GET"
     });
   },
@@ -40,33 +40,33 @@ var API = {
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-// var refreshExamples = function() {
-//   API.getExamples().then(function(data) {
-//     var $examples = data.map(function(example) {
-//       var $a = $("<a>")
-//         .text(example.text)
-//         .attr("href", "/profile/" + profile.id);
+var refreshExamples = function() {
+  API.getProfile().then(function(data) {
+    var $examples = data.map(function(example) {
+      var $a = $("<a>")
+        .text(example.text)
+        .attr("href", "/profile/" + profile.id);
 
-//       var $li = $("<li>")
-//         .attr({
-//           class: "list-group-item",
-//           "data-id": profile.id
-//         })
-//         .append($a);
+      var $li = $("<li>")
+        .attr({
+          class: "list-group-item",
+          "data-id": profile.id
+        })
+        .append($a);
 
-//       var $button = $("<button>")
-//         .addClass("btn btn-danger float-right delete")
-//         .text("ｘ");
+      var $button = $("<button>")
+        .addClass("btn btn-danger float-right delete")
+        .text("ｘ");
 
-//       $li.append($button);
+      $li.append($button);
 
-//       return $li;
-//     });
+      return $li;
+    });
 
-//     $exampleList.empty();
-//     $exampleList.append($examples);
-//   });
-// };
+    $exampleList.empty();
+    $exampleList.append($examples);
+  });
+};
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
@@ -116,3 +116,5 @@ var handleLibrarySearch = function() {
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 $gamelibrary.on("click", handleLibrarySearch);
+
+refreshProfile();
