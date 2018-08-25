@@ -15,6 +15,18 @@ module.exports = function(app) {
     res.render("library");
   });
 
+  app.get("/splash", function(req, res) {
+    res.render("splash");
+  });
+
+  app.get("/aboutUs", function(req, res) {
+    res.render("aboutUs");
+  });
+
+  app.get("/index", function(req, res) {
+    res.render("index");
+  });
+
   // Load example page and pass in an example by id
   app.get("/profile/:id", function(req, res) {
     db.User.findOne({ where: { id: req.params.id } }).then(function(GTdb) {
