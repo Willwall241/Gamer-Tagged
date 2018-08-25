@@ -8,6 +8,12 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/profile/:id", function(req, res) {
+    db.User.findOne({ where: { id: req.params.id } }).then(function(GTdb) {
+      res.json(GTdb);
+    });
+  });
+
   // Create a new example
   app.post("/", function(req, res) {
     db.User.create(req.body).then(function(GTdb) {
