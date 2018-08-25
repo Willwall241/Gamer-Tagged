@@ -1,11 +1,18 @@
-// Get references to page elements
+require("dotenv").config();
+// Get references to form elements
 var $userName = $("#user-name");
 var $firstName = $("#first-name");
 var $lastName = $("#last-name");
 var $email = $("#email-input");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
+var $gamelibrary = $("#search-game");
 
+// Get references to library search
+var $gameSearch = $("#search-input");
+var keys = $("keys.js");
+
+console.log(keys.giantBomb);
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -98,6 +105,14 @@ var handleDeleteBtnClick = function() {
   });
 };
 
+// The game library search function
+var handleLibrarySearch = function() {
+  var game = $gameSearch.val().trim();
+
+  API.getExamples(game);
+};
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+$gamelibrary.on("click", handleLibrarySearch);
