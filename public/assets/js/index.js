@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 // Get references to form elements
 var $userName = $("#user-name");
 var $firstName = $("#first-name");
@@ -10,9 +10,8 @@ var $gamelibrary = $("#search-game");
 
 // Get references to library search
 var $gameSearch = $("#search-input");
-var keys = require("keys.js");
+var testSearch = "Tom";
 
-console.log(keys.giantBomb);
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -25,9 +24,9 @@ var API = {
       data: JSON.stringify(example)
     });
   },
-  getProfile: function(id) {
+  getProfile: function(name) {
     return $.ajax({
-      url: "api/profile/" + id,
+      url: "api/profile/" + name,
       type: "GET"
     });
   },
@@ -40,31 +39,32 @@ var API = {
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getProfile().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/profile/" + profile.id);
+var searchTest = function(test) {
+  API.getProfile(test).then(function(data) {
+    console.log(data);
+    // var $examples = data.map(function(example) {
+    //   var $a = $("<a>")
+    //     .text(example.text)
+    //     .attr("href", "/profile/" + profile.id);
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": profile.id
-        })
-        .append($a);
+    //   var $li = $("<li>")
+    //     .attr({
+    //       class: "list-group-item",
+    //       "data-id": profile.id
+    //     })
+    //     .append($a);
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+    //   var $button = $("<button>")
+    //     .addClass("btn btn-danger float-right delete")
+    //     .text("ｘ");
 
-      $li.append($button);
+    //   $li.append($button);
 
-      return $li;
-    });
+    //   return $li;
+    // });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    // $exampleList.empty();
+    // $exampleList.append($examples);
   });
 };
 
@@ -117,4 +117,4 @@ $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 $gamelibrary.on("click", handleLibrarySearch);
 
-refreshProfile();
+searchTest(testSearch);

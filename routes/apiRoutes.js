@@ -8,8 +8,8 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/profile/:id", function(req, res) {
-    db.User.findOne({ where: { id: req.params.id } }).then(function(GTdb) {
+  app.get("/api/profile/:name", function(req, res) {
+    db.User.findOne({ where: { firstName: req.params.name } }).then(function(GTdb) {
       res.json(GTdb);
     });
   });
