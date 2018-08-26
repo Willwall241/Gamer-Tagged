@@ -1,4 +1,3 @@
-
 // Get references to form elements
 var $userName = $("#user-name");
 var $firstName = $("#first-name");
