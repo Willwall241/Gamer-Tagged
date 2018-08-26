@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    game: {
+    gameID: {
       type: DataTypes.STRING,
       allowNull: false
     }
