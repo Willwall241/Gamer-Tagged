@@ -16,9 +16,16 @@ module.exports = function(app) {
     });
   });
 
-  // Create a new example
+  // Create a new profile
   app.post("/", function(req, res) {
     db.User.create(req.body).then(function(GTdb) {
+      res.json(GTdb);
+    });
+  });
+
+  // Create a new game
+  app.post("/library", function(req, res) {
+    db.Library.create(req.body).then(function(GTdb) {
       res.json(GTdb);
     });
   });

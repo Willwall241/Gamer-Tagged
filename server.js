@@ -8,6 +8,9 @@ var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+var giantBombKey = process.env.GIANTBOMB_KEY;
+var steamKey = process.env.STEAM_SECRET;
+
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -46,3 +49,5 @@ db.sequelize.sync(syncOptions).then(function() {
 });
 
 module.exports = app;
+module.exports = giantBombKey;
+module.exports = steamKey;
