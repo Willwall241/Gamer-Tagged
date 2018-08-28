@@ -1,13 +1,15 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.User.findAll({}).then(function(GTdb) {
+  // Get profile
+  app.get("/api/profile/:username", function(req, res) {
+    db.User.findOne({
+      where: { id: req.params.username }
+    }).then(function(GTdb) {
       res.json(GTdb);
     });
   });
-
+  // profile search
   app.get("/api/profile/:name", function(req, res) {
     db.User.findOne({
       where: { firstName: req.params.name }
@@ -22,7 +24,6 @@ module.exports = function(app) {
       res.json(GTdb);
     });
   });
-
   // Create a new game
   app.post("/library", function(req, res) {
     db.Library.create(req.body).then(function(GTdb) {
