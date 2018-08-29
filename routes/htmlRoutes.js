@@ -11,20 +11,20 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/library", function(req, res) {
-    res.render("library");
-  });
+  // app.get("/library", function(req, res) {
+  //   res.render("library");
+  // });
 
-  app.get("/splash", function(req, res) {
-    res.render("splash");
-  });
+  // app.get("/splash", function(req, res) {
+  //   res.render("splash");
+  // });
 
-  app.get("/aboutUs", function(req, res) {
-    res.render("aboutUs");
-  });
+  // app.get("/aboutUs", function(req, res) {
+  //   res.render("aboutUs");
+  // });
 
   app.get("/index", function(req, res) {
-    res.render("index");
+    res.render("temp");
   });
 
   // Load example page and pass in an example by id
