@@ -26,15 +26,14 @@ module.exports = function(app) {
   app.get("/index", function(req, res) {
     res.render("index");
   });
-  app.get("/profile", function(req, res) {
-    res.render("profile");
-  });
 
   // Load example page and pass in an example by id
-  app.get("/profile/:id", function(req, res) {
-    db.User.findOne({ where: { id: req.params.id } }).then(function(GTdb) {
-      res.render("example", {
-        example: GTdb
+  app.get("/profile/:username", function(req, res) {
+    db.User.findOne({ where: { userName: req.params.username } }).then(function(
+      profile
+    ) {
+      res.render("profile", {
+        user: profile
       });
     });
   });
