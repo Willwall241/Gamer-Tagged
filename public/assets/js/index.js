@@ -7,7 +7,7 @@ var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 var $gamelibrary = $("#search-game");
 var searchResults = [];
-
+//comment
 // Game library search function
 function handleLibrarySearch() {
   var game = $("#search-input")
