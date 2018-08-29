@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="profile-bootstrap.css" />
+</head>
+
+<body>
+  <!--Modal Div here-->
+  <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="profModalLabel">Edit Profile Information</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!--Beginning the body of the modal here, split into 2 columns;
+    One for the picture and upload button, and the other one for the text fields-->
+          <form>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col col-lg-4">
+                  <div class="row">
+                    <div class="col col-lg-12 d-flex align-items-center">
+                      <img id="edit-prof-pic" src="https://s3.zerochan.net/Skasaha.%28Granblue.Fantasy%29.240.2095620.jpg" alt="Skasaha (Granblue Fantasy)"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col col-lg-12 mt-2">
+                      <button type="button" class="btn btn-primary">Upload Image</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col col-lg-4 d-flex align-items-stretch">
+                  <div class="row">
+                    <div class="col col-lg-12">
+                      <input type="text" class="form-control modal-text" placeholder="Name...">
+                    </div>
+                    <div class="col col-lg-12">
+                      <input type="text" class="form-control modal-text" placeholder="Location...">
+                    </div>
+                    <div class="col col-lg-12">
+                      <textarea class="form-control modal-text" rows="2" placeholder="Bio..."></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="col col-lg-4 d-flex align-items-stretch">
+                  <div class="row">
+                    <div class="col col-lg-12">
+                      <input type="text" class="form-control modal-text" placeholder="Xbox Tag...">
+                    </div>
+                    <div class="col col-lg-12">
+                      <input type="text" class="form-control modal-text" placeholder="PSN ID...">
+                    </div>
+                    <div class="col col-lg-12">
+                      <input type="text" class="form-control modal-text" placeholder="Steam ID...">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Send message</button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="container">
+    <div class="row" id="prof-container">
+      <div class="col col-lg-4">
+        <div class="row">
+          <div class="col col-lg-12 pb-3 d-flex justify-content-end">
+            <img id="prof-pic" src="https://s3.zerochan.net/Skasaha.%28Granblue.Fantasy%29.240.2095620.jpg" alt="Skasaha (Granblue Fantasy)"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-12 ml-4 text-center">
+            <input type="button" data-toggle="modal" data-target="#profileModal" id="edit-prof-btn" class="btn" value="Edit Profile">
+          </div>
+        </div>
+      </div>
+      <div class="col col-lg-4 mt-4">
+        <div class="row">
+          <div class="col col-lg-12">
+            <p id="prof-name" class="prof-info">William Scath</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-12">
+            <p id="prof-loc" class="prof-info">Alster Island</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-12">
+            <p id="prof-bio" class="prof-info"> Argh... You won't best me next time, chopsticks!!!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mt-5">
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="prof-tag">Xbox Tag: PlumpFishies</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <p class="prof-tag">PSN ID: PlumpFishies</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 ">
+            <p class="prof-tag">Steam ID: PlumpFishies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="row" id="bottom-container">
+      <div class="col col-lg-5" id="wall-container">
+        <div class="row">
+          <div class="col col-lg-12">
+            <textarea id="status-area" form="status-textarea" placeholder="What would you like to tell everyone?"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-3">
+            <div class="row">
+              <div class="col col-lg-12">
+                <img class="wall-pic" src="https://s3.zerochan.net/Skasaha.%28Granblue.Fantasy%29.240.2095620.jpg" alt="Skasaha (Granblue Fantasy)"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="col col-lg-9">
+            <div class="row">
+              <div class="col col-lg-12">
+                <p class="wall-text">William Scath<br /> August 29, 2018</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-lg-12">
+            <p>Trick! Or! Treat! Now hand over the candy. What? What's wrong with what I said? I heard that I'll get candy
+              as long as I say those words. Ah... So it's a choice between either pulling a prank or receiving a sweet. Very
+              well! If no candy is granted to me, then I shall unleash my full-pranking fury upon you!</p>
+          </div>
+        </div>
+        <div class="row" id="wall-react">
+          <div class="col col-lg-2">
+            <div class="row">
+              <div class="col col-lg-12 d-flex justify-content-center">
+                <p>Like</p>
+              </div>
+            </div>
+          </div>
+          <div class="col col-lg-2">
+            <div class="row">
+              <div class="col col-lg-12 d-flex justify-content-center">
+                <p>WutFace</p>
+              </div>
+            </div>
+          </div>
+          <div class="col col-lg-2">
+            <div class="row">
+              <div class="col col-lg-12 d-flex justify-content-center">
+                <p>Scared</p>
+              </div>
+            </div>
+          </div>
+          <div class="col col-lg-2">
+            <div class="row">
+              <div class="col col-lg-12 d-flex justify-content-center">
+                <p>FiteMeM8</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-lg-7" id="lib-container">
+        <div class="row">
+          <div class=" col col-lg-4" id="current-lib-games">
+            <div class="row no-gutter">
+              <div class="col col-lg-12">
+                <input type="text" id="lib-search" placeholder="Search Library...">
+              </div>
+            </div>
+
+            <div class="row" id="lib-game-list">
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Dark Souls 3</p>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Skyrim</p>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Dead or Alive 3</p>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Game 4</p>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Game 5</p>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Game 6</p>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Game 7</p>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Game 8</p>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Game 9</p>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Game 10</p>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Game 11</p>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center lib-item-col">
+                <p class="lib-item">Game 12</p>
+              </div>
+            </div>
+          </div>
+          <div class="col col-lg-8 mt-5" id="game-stats">
+            <div class="row">
+              <div class="col col-lg-9" id="game-info">
+                <div class="row">
+                  <div class="col col-lg-12">
+                    <p>Relevant API Information 1</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-lg-12">
+                    <p>Relevant API Information 2</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col col-lg-12">
+                    <p>Relevant API Information 3</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-lg-3" id="game-icon">
+                <div class="row">
+                  <div class="col col-lg-12 d-flex justify-content-center" id="icon">
+                    <img src="dark-souls.png" alt="Dark Souls Icon" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
