@@ -5,7 +5,7 @@
         <h1>{{msg}}</h1>
         <h2>Gamer Tagged</h2>
         <form class="clearfix mb-4" action="POST">
-             <div class="form-group row">
+          <div class="form-group row">
             <label for="username-input" class="col-2 col-form-label">Username:</label>
             <div class="col-10">
               <input class="form-control" type="text" value="tom5" id="user-name">
@@ -29,13 +29,47 @@
               <input class="form-control" type="email" value="bootstrap@example.com" id="email-input">
             </div>
           </div>
-
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-       
+            <div class="form-group row">
+            <label for="fist-name-input" class="col-2 col-form-label">PSN Name:</label>
+            <div class="col-10">
+              <input class="form-control" type="text" id="psn-name">
+            </div>
+          </div>
+            <div class="form-group row">
+            <label for="fist-name-input" class="col-2 col-form-label">Xbox Gamer Tag:</label>
+            <div class="col-10">
+              <input class="form-control" type="text" id="xbox-name">
+            </div>
+          </div>
+            <div class="form-group row">
+            <label for="fist-name-input" class="col-2 col-form-label">Steam Name:</label>
+            <div class="col-10">
+              <input class="form-control" type="text" id="steam-name">
+            </div>
+          </div>
+          <div class="form-group row"></div>
+          <label for="inputPassword" class="control-label">Password</label>
+          <div class="form-inline row">
+            <div class="form-group col-sm-6">
+              <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+              <div class="help-block">Minimum of 6 characters</div>
+            </div>
+            <div class="form-group col-sm-6">
+              <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match"
+                placeholder="Confirm" required>
+              <div class="help-block with-errors"></div>
+            </div>
+          </div>
       </div>
+
+
+
+      <button id="submit" class="btn btn-primary float-right">Submit</button>
+      </form>
+
     </div>
   </div>
+</div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
