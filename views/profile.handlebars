@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Something to push and test -->
-
-<head>
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,40 +8,14 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
         <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-        <link rel="stylesheet" href="assets/css/profileStyle.css">
+        <link rel="stylesheet" href="/assets/css/profileStyle.css">
         <title>Gamer Tagged</title>
     </head>
 
-    <body onload="populatePage()">
+    <body>
         <main>
             <!-- NAVBAR -->
-            <nav>
-                <div class="nav-wrapper hf-color">
-
-                    <a href="#!" class="brand-logo">
-                        <i class="material-icons icon">videogame_asset</i>Gamer Tagged</a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                        <i class="material-icons">menu</i>
-                    </a>
-
-                    <ul class="right hide-on-med-and-down">
-                        <li>
-                            <a class="waves-effect waves-light btn" id="signout-btn">Log Out</a>
-                        </li>
-                    </ul>
-
-                </div>
-            </nav>
-
-            <div class="sidenav" id="mobile-demo">
-
-                <ul>
-                    <li>
-                        <a class="waves-effect waves-light btn" id="signout-btn">Log Out</a>
-                    </li>
-                </ul>
-
-            </div>
+          
 
             <!--SIDEBAR-->
 
@@ -55,21 +26,21 @@
 
 
                     <div class="col s12 m12 l12 card-color profile margin">
-                        <h2 class="header card-color">
-                            <p id="nameOfUser">John Smith</p>
-                            <p id="real-name"></p>
-                        </h2>
+                        
+                            <h3><p id="nameOfUser"></p>{{user.userName}}</p>
+                            <p id="real-name">{{user.firstName}} {{user.lastName}}</p>
+                        
 
 
                         <div class="card horizontal card-color-greenLight">
                             <div class="card-image" id="profileImage">
 
-                                <img class="" src="assets/images/profile picture Michael Scott.jpg">
+                                <img class="" src="{{user.image}}">
 
                             </div>
                             <div class="card-stacked col s7">
                                 <div class="card-content ">
-                                    <p id="status"> asdfasdfadsfadsfasddadfasdfadfadfasdfassdfassdfasdfasdfasdfasdfasdfadf</p>
+                                    <p id="status"> </p>
 
 
                                     <div class="row">
@@ -89,21 +60,21 @@
                                     <ul>
                                         <li>
                                             <p>Psn:
-                                                <span id="playStationUsername">
+                                                {{user.psn}}
 
                                             </p>
 
                                         </li>
                                         <li>
                                             <p>Xbox:
-                                                <span id="xboxUsername">
+                                                {{user.gamerTag}}
 
                                             </p>
 
                                         </li>
                                         <li>
                                             <p>Steam:
-                                                <span id="steamUsername">
+                                                {{user.steam}}
 
                                             </p>
 
@@ -148,13 +119,13 @@
                     <div id="test2" class="col s12 card-color white-text">
                         <h3>Contact</h3>
                         <p>First name:
-                            <span id="firstName"></span>
+                            <span id="firstName">{{user.firstName}}</span>
                         </p>
                         <p>last name:
-                            <span id="lastName"></span>
+                            <span id="lastName">{{user.lastName}}</span>
                         </p>
                         <p>Email:
-                            <span id="emailOfUser"></span>
+                            <span id="emailOfUser">{{user.email}}</span>
                         </p>
                     </div>
 

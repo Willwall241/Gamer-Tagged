@@ -18,6 +18,11 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/library/search", function(req, res) {
+    var game = req.body;
+    res.render("library", game);
+  });
+
   // Create a new profile
   app.post("/", function(req, res) {
     db.User.create(req.body).then(function(GTdb) {

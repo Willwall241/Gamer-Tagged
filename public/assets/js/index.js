@@ -37,8 +37,9 @@ function handleLibrarySearch() {
     searchResults = [];
     for (i = 0; i < 10; i++) {
       gameData.games.push(results[i]);
-      console.log(gameData);
     }
+    console.log(gameData);
+    return gameData;
   });
 }
 
@@ -95,6 +96,8 @@ var API = {
     return $.ajax({
       url: "api/library/" + game,
       type: "GET"
+    }).then(function(results) {
+      console.log(results);
     });
   }
 };
