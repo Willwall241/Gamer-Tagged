@@ -25,30 +25,29 @@ module.exports = function(app) {
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, function(req, res) {
+  app.get("/members", isAuthenticated, function (req, res) {
     res.render("members");
   });
 };
 
-// module.exports = function(app) {
-//   // Load index page
-//   app.get("/", function(req, res) {
-//     db.User.findAll({}).then(function(GTdb) {
-//       res.render("indexTest", {
-//         msg: "Welcome!",
-//         examples: GTdb
-//       });
-//     });
-//   });
+module.exports = function(app) {
+  // Load index page
+  app.get("/", function(req, res) {
+    db.User.findAll({}).then(function(GTdb) {
+      res.render("indexTest", {
+        msg: "Welcome!",
+        examples: GTdb
+      });
+    });
+  });
 
-//   app.get("/library", function(req, res) {
-//     res.render("library");
-//   });
+  app.get("/library", function(req, res) {
+    res.render("library");
+  });
 
-
-//   app.get("/splash", function(req, res) {
-//     res.render("splash");
-//   });
+  app.get("/splash", function(req, res) {
+    res.render("splash");
+  });
 
   // Load example page and pass in an example by id
   app.get("/profile/:username", function(req, res) {
@@ -59,27 +58,27 @@ module.exports = function(app) {
         user: profile
       });
     });
+  });
 
+  app.get("/aboutUs", function(req, res) {
+    res.render("aboutUs");
+  });
 
-//   app.get("/aboutUs", function(req, res) {
-//     res.render("aboutUs");
-//   });
+  app.get("/index", function(req, res) {
+    res.render("index");
+  });
 
-//   app.get("/index", function(req, res) {
-//     res.render("index");
-//   });
+  // Load example page and pass in an example by id
+  app.get("/profile/:id", function(req, res) {
+    db.User.findOne({ where: { id: req.params.id } }).then(function(GTdb) {
+      res.render("example", {
+        example: GTdb
+      });
+    });
+  });
 
-//   // Load example page and pass in an example by id
-//   app.get("/profile/:id", function(req, res) {
-//     db.User.findOne({ where: { id: req.params.id } }).then(function(GTdb) {
-//       res.render("example", {
-//         example: GTdb
-//       });
-//     });
-//   });
-
-//   // Render 404 page for any unmatched routes
-//   app.get("*", function(req, res) {
-//     res.render("404");
-//   });
-// };
+  // Render 404 page for any unmatched routes
+  app.get("*", function(req, res) {
+    res.render("404");
+  });
+};
