@@ -2,6 +2,7 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 module.exports = function(app) {
+
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -39,6 +40,36 @@ module.exports = function(app) {
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
+=======
+  // Get profile
+  app.get("/api/profile/:username", function(req, res) {
+    db.User.findOne({
+      where: { id: req.params.username }
+    }).then(function(GTdb) {
+      res.json(GTdb);
+    });
+  });
+  // profile search
+  app.get("/api/profile/:name", function(req, res) {
+    db.User.findOne({
+      where: { firstName: req.params.name }
+    }).then(function(GTdb) {
+      res.json(GTdb);
+    });
+  });
+
+  // Create a new profile
+  app.post("/", function(req, res) {
+    db.User.create(req.body).then(function(GTdb) {
+      res.json(GTdb);
+    });
+
+  });
+  // Create a new game
+  app.post("/library", function(req, res) {
+    db.Library.create(req.body).then(function(GTdb) {
+      res.json(GTdb);
+    });
   });
 
   // Route for getting some data about our user to be used client side

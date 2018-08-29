@@ -9,6 +9,9 @@ var passport = require("./config/passport");
 
 var PORT = process.env.PORT || 3000;
 
+var giantBombKey = process.env.GIANTBOMB_KEY;
+var steamKey = process.env.STEAM_SECRET;
+
 // Middleware
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -34,6 +37,7 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
+// require("./routes/giantBomb-api")(app);
 
 var syncOptions = { force: false };
 
@@ -55,3 +59,5 @@ db.sequelize.sync(syncOptions).then(function() {
 });
 
 module.exports = app;
+module.exports = giantBombKey;
+module.exports = steamKey;

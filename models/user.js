@@ -38,7 +38,34 @@ module.exports = function(sequelize, DataTypes) {
         isEmail: true
       }
     },
-
+    psn: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [2]
+      }
+    },
+    gamerTag: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [2]
+      }
+    },
+    steam: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [2]
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [2]
+      }
+    },
     image: {
       type: DataTypes.STRING,
       allowNull: true
