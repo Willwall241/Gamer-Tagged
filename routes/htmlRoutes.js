@@ -1,7 +1,7 @@
-var db = require("../models");
+// var db = require("../models");
 
 // Requiring path to so we can use relative routes to our HTML files
-var path = require("path");
+// var path = require("path");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -45,21 +45,20 @@ module.exports = function(app) {
 //     res.render("library");
 //   });
 
-
 //   app.get("/splash", function(req, res) {
 //     res.render("splash");
 //   });
 
-  // Load example page and pass in an example by id
-  app.get("/profile/:username", function(req, res) {
-    db.User.findOne({ where: { userName: req.params.username } }).then(function(
-      profile
-    ) {
-      res.render("profile", {
-        user: profile
-      });
-    });
-
+//   // Load example page and pass in an example by id
+//   app.get("/profile/:username", function(req, res) {
+//     db.User.findOne({ where: { userName: req.params.username } }).then(function(
+//       profile
+//     ) {
+//       res.render("profile", {
+//         user: profile
+//       });
+//     });
+//   });
 
 //   app.get("/aboutUs", function(req, res) {
 //     res.render("aboutUs");
