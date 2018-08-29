@@ -26,6 +26,9 @@ module.exports = function(app) {
   app.get("/index", function(req, res) {
     res.render("index");
   });
+  app.get("/profile", function(req, res) {
+    res.render("profile");
+  });
 
   // Load example page and pass in an example by id
   app.get("/profile/:id", function(req, res) {
