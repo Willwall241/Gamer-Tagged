@@ -170,28 +170,28 @@
 
         /* Main content centering
     * --------------------------------------- */
-    .modal-backdrop {
-  z-index: -1;
-}
-.model-content {
-    margin-left: 10em !important;
-    margin-right: 10em !important;
-}
+        .modal-backdrop {
+            z-index: -1;
+        }
 
-#signupModalTop,
-#signupModalMiddle,
-#signupModalBottom {
-    background-color: #fff;
-    border-color: #fff !important;
-}
+        .model-content {
+            margin-left: 10em !important;
+            margin-right: 10em !important;
+        }
 
-#signupModalLabel {
-    color: #000;
-    text-shadow: 1px 1px rgb(185, 170, 170);
-    font-size: 2.25em;
-    text-align: center;
-}
+        #signupModalTop,
+        #signupModalMiddle,
+        #signupModalBottom {
+            background-color: #fff;
+            border-color: #fff !important;
+        }
 
+        #signupModalLabel {
+            color: #000;
+            text-shadow: 1px 1px rgb(185, 170, 170);
+            font-size: 2.25em;
+            text-align: center;
+        }
     </style>
 
     <!--[if IE]>
@@ -248,7 +248,7 @@
     <option id="vue-fullpage">Vue-fullpage component</option>
 </select>
 
-<nav>
+{{!-- <nav>
     <div id="header" class="col s12 nav-wrapper hf-color">
         <a href="#!" class="brand-logo">
             <i class="material-icons icon">videogame_asset</i>Gamer Tagged</a>
@@ -276,9 +276,9 @@
             </li>
         </ul>
     </div>
-</nav>
-
-{{!--Modal div for profile creation goes here --------------------------------------------- --}}
+</nav> --}}
+<main>
+    {{!--Modal div for profile creation goes here --------------------------------------------- --}}
     <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -352,114 +352,115 @@
         </div>
     </div>
 
-<div id="fullpage">
+    <div id="fullpage">
 
-    <div class="section" id="section0">
-        <div class="container d-flex">
-            <div class="row main-content">
-                <div class="col s12 m12 l4 offset-l4">
-                    <div class="intro">
-                        <div class="card login-style" id="top-card">
-                            <div class="card-content">
-                                <div class="row">
-                                    <span class="card-title">Profile Login</span>
+        <div class="section" id="section0">
+            <div class="container d-flex">
+                <div class="row main-content">
+                    <div class="col s12 m12 l4 offset-l4">
+                        <div class="intro">
+                            <div class="card login-style" id="top-card">
+                                <div class="card-content">
                                     <div class="row">
-                                        <div class="input-field col s12">
-                                            <input class="login-email" type="email" class="validate" placeholder="Email here...">
+                                        <span class="card-title">Profile Login</span>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input class="login-email" type="email" class="validate" placeholder="Email here...">
 
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input class="login-password" type="password" class="validate" placeholder="Password here...">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input class="login-password" type="password" class="validate" placeholder="Password here...">
 
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-action bg-transparent loginBtn-style">
-                                <button class="btn" type="submit" name="action" id="top-login-btn">Submit
-                                    <i class="material-icons right">send</i>
-                                </button>
-                                <button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="top-profile-modal">Create
-                                    Profile
-                                    <i class="material-icons right">send</i>
-                                </button>
+                                <div class="card-action bg-transparent loginBtn-style">
+                                    <button class="btn" type="submit" name="action" id="top-login-btn">Submit
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                    <button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="top-profile-modal">Create
+                                        Profile
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="section" id="section1">
-        <div class="slide" id="slide1">
+        <div class="section" id="section1">
+            <div class="slide" id="slide1">
+                <div class="intro">
+                    <h1>About Us</h1>
+                    <p>
+                        As proud gamers and dedicated developers, we do our very best to provide the gaming community with all the features we find
+                        lacking on today's average social website. We are constantly enhancing Gamer Tagged with suggestions
+                        given to us by you, the user, to create the optimal experience.</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section2">
             <div class="intro">
-                <h1>About Us</h1>
-                <p>
-                    As proud gamers and dedicated developers, we do our very best to provide the gaming community with all the features we find
-                    lacking on today's average social website. We are constantly enhancing Gamer Tagged with suggestions
-                    given to us by you, the user, to create the optimal experience.</p>
+                <h1>Gamer-Tagged</h1>
+                <p class="big">
+                    <ul>
+                        <h5>
+                            <li>Signing up is too easy.</li>
+                            <li>Your profile tells your own unique story.</li>
+                            <li>You choose the games you love, and befriend others who love the same games.</li>
+                            <li>It opens the door for the exchange of tips and tricks,</li>
+                            <li>benefitting you and your newfound friends.</li>
+                            <li>A like-minded gamer makes for a reliable teammate.</li>
+                        </h5>
+                    </ul>
+                </p>
                 </p>
             </div>
         </div>
-    </div>
-    <div class="section" id="section2">
-        <div class="intro">
-            <h1>Gamer-Tagged</h1>
-            <p class="big">
-                <ul>
-                    <h5>
-                        <li>Signing up is too easy.</li>
-                        <li>Your profile tells your own unique story.</li>
-                        <li>You choose the games you love, and befriend others who love the same games.</li>
-                        <li>It opens the door for the exchange of tips and tricks,</li>
-                        <li>benefitting you and your newfound friends.</li>
-                        <li>A like-minded gamer makes for a reliable teammate.</li>
-                    </h5>
-                </ul>
-            </p>
-            </p>
-        </div>
-    </div>
 
-    <div class="section" id="section3">
-        <div class="container">
-            <style type="text/css">
-            </style>
-            <div class="row main-content">
-                <div class="col s12 m12 l4 offset-l4">
-                    <div class="intro">
-                        <div class="card login-style" id="bottom-card">
-                            <div class="card-content">
-                                <div class="row">
-                                    <span class="card-title">Profile Login</span>
+        <div class="section" id="section3">
+            <div class="container">
+                <style type="text/css">
+                </style>
+                <div class="row main-content">
+                    <div class="col s12 m12 l4 offset-l4">
+                        <div class="intro">
+                            <div class="card login-style" id="bottom-card">
+                                <div class="card-content">
                                     <div class="row">
-                                        <div class="input-field col s12">
-                                            <input class="login-email" type="email" class="validate" placeholder="Email here...">
+                                        <span class="card-title">Profile Login</span>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input class="login-email" type="email" class="validate" placeholder="Email here...">
 
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="input-field col s12">
-                                            <input class="login-password" type="password" class="validate" placeholder="Password here...">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input class="login-password" type="password" class="validate" placeholder="Password here...">
 
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card-action bg-transparent loginBtn-style">
-                                <button class="btn" type="submit" name="action" id="btm-login-btn">Submit
-                                    <i class="material-icons right">send</i>
-                                </button>
-                                <button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="btm-profile-modal">Create
-                                    Profile
-                                    <i class="material-icons right">send</i>
-                                </button>
+                                <div class="card-action bg-transparent loginBtn-style">
+                                    <button class="btn" type="submit" name="action" id="btm-login-btn">Submit
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                    <button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="btm-profile-modal">Create
+                                        Profile
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -467,8 +468,7 @@
             </div>
         </div>
     </div>
-</div>
-
+</main>
 <script type="text/javascript" src="assets/js/fullpage.js"></script>
 <script type="text/javascript" src="assets/js/examples.js"></script>
 
