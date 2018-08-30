@@ -28,6 +28,9 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     res.render("members");
   });
+  app.get("/friends", function(req, res) {
+    res.render("indexTest");
+  });
 };
 
 // module.exports = function(app) {

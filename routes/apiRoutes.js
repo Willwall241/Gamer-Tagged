@@ -86,6 +86,54 @@ module.exports = function(app) {
       });
     }
   });
+
+  // for friend search
+  app.get("/api/friend/search/:name", function(req, res) {
+    db.User.findAll({
+      where: { firstName: req.params.name }
+    }).then(function(GTdb) {
+      data = {
+        friends: GTdb
+      };
+      res.render("indexTest", data);
+      console.log(data.friends);
+    });
+  });
+
+  // add friend
+  app.post("/api/friend/add/", function(req, res) {
+    console.log(req.body.userId);
+    db.Friend.create({
+      friendId: req.body.friendId,
+      UserId: req.body.userId
+    }).then(function(GTdb) {
+      res.json(GTdb);
+    });
+  });
+
+  // display friend's list
+  app.get("/api/friend/list/:id", function(req, res) {
+    db.Friend.findAll({
+      where: {
+        UserId: req.params.id
+      },
+      include: [db.User]
+    }).then(function(GTdb) {
+      console.log(GTdb);
+      res.json(GTdb);
+    });
+  });
+
+  // status change
+  app.put("/api/status/", function(req, res) {
+    db.User.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
 };
 
 // module.exports = function(app) {
