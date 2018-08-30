@@ -69,8 +69,19 @@ module.exports = function(sequelize, DataTypes) {
     image: {
       type: DataTypes.STRING,
       allowNull: true
+    },
+    status: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   });
+  User.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    User.hasMany(models.Friend, {
+      onDelete: "cascade"
+    });
+  };
   User.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
   };
