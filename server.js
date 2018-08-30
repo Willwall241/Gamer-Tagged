@@ -7,6 +7,7 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
+
 var PORT = process.env.PORT || 3000;
 
 var giantBombKey = process.env.GIANTBOMB_KEY;
