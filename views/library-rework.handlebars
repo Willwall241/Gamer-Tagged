@@ -1,0 +1,116 @@
+<style>
+  html {
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom right, #f765b8, #27fdf5);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 1.5em;
+    margin: 0 auto;
+    text-shadow: 1px 1px #000;
+  }
+
+  .card {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .card-body {
+    margin: 2em 3em;
+  }
+
+  .lib-row {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  #search-input,
+  #search-input::placeholder {
+    color: #fff;
+    text-shadow: 1px 1px #000 margin: 0 auto;
+  }
+
+  #search-game {
+    font: bold;
+    background: transparent;
+    border-radius: 3em;
+  }
+</style>
+
+<div class="container" id="lib-search-container">
+  <div class="row">
+    <div class="col col-s-12 col-lg-8 offset-l2">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="row">
+            <div class="col col-s-12 col-lg-12 lib-row lib-header">
+              <h5 class="card-title">Game Library</h5>
+            </div>
+            <div class="col col-s-12 col-lg-12 lib-row">
+              <input id="search-input" class="form-control" type="text" placeholder="Which game would you like to add to your library?">
+            </div>
+            <div class="col col-s-12 col-lg-12 lib-row">
+              <button class="btn pull-center" type="submit" id="search-game">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container invisible" id="lib-result-container">
+  <div class="row">
+    <div class="col col-s-12 col-lg-8 offset-l2">
+      <div class="card text-center">
+        <div class="card-body">
+          <div class="row">
+            <div class="col col-s-12 col-lg-12 lib-search-result lib-search-header">
+              <h5 class="card-title" id="search-header">Search Results</h5>
+            </div>
+            <div class="col col-s-12 col-lg-12 lib-search-result">
+              {{!-- Each individual search result pulled from the API will go inside of the columns with the class "lib-search-result"
+              --------------Further testing is necessary in order to make sure that they display correctly and presented
+              well----------- --}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{!-- <script which makes the invisible container that holds the search results become visible, along with a conditional check
+-------To see if the user has typed in any input; if not, a div displaying that no search was given shows up-------------------
+  script type="text/javascript">
+ $(document).ready(function() {
+  $("#search-game").on("click", function() {
+    var input = $("#search-input").val().trim();
+
+    if (!input) {
+      $("#lib-result-container").removeClass("invisible");
+      var newDiv = $("<div>");
+      newDiv.attr({
+        class: "col col-s-12 col-lg-12 lib-search-result"
+      });
+      var noInputMessage = $("<p>").text("You haven't given us anything to search with! Try again when you get some character(s).");
+      newDiv.append(noInputMessage);
+      $("#search-header").append(newDiv);
+    }
+  });
+});
+</script> --}}
