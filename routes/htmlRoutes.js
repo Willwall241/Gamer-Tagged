@@ -30,6 +30,9 @@ module.exports = function(app) {
     res.render("members");
     console.log(req.user);
   });
+  app.get("/friends", function(req, res) {
+    res.render("indexTest");
+  });
 };
 
 // module.exports = function(app) {
