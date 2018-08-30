@@ -12,7 +12,7 @@ module.exports = function(app) {
     if (req.user) {
       res.render("members");
     }
-    res.render("login");
+    res.render("signup");
   });
 
   app.get("/login", function(req, res) {
