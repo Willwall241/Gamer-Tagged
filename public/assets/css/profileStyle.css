@@ -1,9 +1,14 @@
+
 #profileImage{
   width:190px;
   height:190px;
 }
 #sideNavBar{
   margin:0px;
+}
+
+nav {
+  z-index: 2;
 }
 
 .tabs-padding {

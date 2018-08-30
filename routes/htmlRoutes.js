@@ -11,8 +11,9 @@ module.exports = function(app) {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.render("members");
+      
     }
-    res.render("temp");
+    res.render("signup");
   });
 
   app.get("/login", function(req, res) {
@@ -27,6 +28,7 @@ module.exports = function(app) {
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function(req, res) {
     res.render("members");
+    console.log(req.user);
   });
 };
 
