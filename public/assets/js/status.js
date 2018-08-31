@@ -5,8 +5,7 @@ $statusSubmit.on("click", handleStatusChange);
 
 var handleStatusChange = function() {
   var status = {
-    status: $newStatus.val().trim(),
-    id: 2 //get user id
+    status: $newStatus.val().trim()
   };
   API.statusChange(status);
 };

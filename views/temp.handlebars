@@ -11,7 +11,6 @@
 
 
     <link rel="stylesheet" type="text/css" href="../dist/fullpage.css" />
-    <link rel="stylesheet" type="text/css" href="examples.css" />
     <style>
         /* Document styling
 	* --------------------------------------- */
@@ -302,6 +301,7 @@
             </li>
         </ul>
     </div>
+
 </nav> --}}
 <main>
     {{!--Modal div for profile creation goes here --------------------------------------------- --}}
@@ -315,68 +315,75 @@
                     </button>
                 </div>
                 <div class="modal-body" id="signupModalMiddle">
-                    <form>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col col-s12 col-lg-6 d-flex align-items-stretch">
-                                    <div class="row">
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupFirstName" placeholder="First Name...">
-                                        </div>
-
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupUserName" placeholder="Username...">
-                                        </div>
-
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupPassword" placeholder="Password...">
-                                        </div>
+                    <form class="signup">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col col-s12 col-lg-6 d-flex align-items-stretch">
+                                <div class="row">
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" id="firstname-input" placeholder="First Name...">
                                     </div>
-                                </div>
 
-                                <div class="col col-s12 col-lg-6 d-flex align-items-stretch">
-                                    <div class="row">
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupLastName" placeholder="Last Name...">
-                                        </div>
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" id="username-input" placeholder="Username...">
+                                    </div>
 
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupEmail" placeholder="Email...">
-                                        </div>
-
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupConfirmPass" placeholder="Confirm Password...">
-                                        </div>
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" id="password-input" placeholder="Password...">
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row d-flex align-items-center">
-                                <div class="col col-s-4 col-lg-4">
-                                    <input type="text" class="form-control modal-text" id="signupXbox" placeholder="Xbox Tag...">
-                                </div>
+                            <div class="col col-s12 col-lg-6 d-flex align-items-stretch">
+                                <div class="row">
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" id="lastname-input" placeholder="Last Name...">
+                                    </div>
 
-                                <div class="col col-s-4 col-lg-4">
-                                    <input type="text" class="form-control modal-text" id="signupPSN" placeholder="PSN ID...">
-                                </div>
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" id="email-input" placeholder="Email...">
+                                    </div>
 
-                                <div class="col col-s-4 col-lg-4">
-                                    <input type="text" class="form-control modal-text" id="signupSteam" placeholder="Steam ID...">
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" placeholder="Confirm Password...">
+                                    </div>
                                 </div>
-
                             </div>
                         </div>
-                    </form>
-                </div>
 
-                <div class="modal-footer" id="signupModalBottom">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
-                </div>
+                        <div class="row d-flex align-items-center">
+                            <div class="col col-s-4 col-lg-4">
+                                <input type="text" class="form-control modal-text" id="xbox-input" placeholder="Xbox Tag...">
+                            </div>
+
+                            <div class="col col-s-4 col-lg-4">
+                                <input type="text" class="form-control modal-text" id="playstation-input" placeholder="PSN ID...">
+                            </div>
+
+                            <div class="col col-s-4 col-lg-4">
+                                <input type="text" class="form-control modal-text" id="steam-input" placeholder="Steam ID...">
+                            </div>
+
+                        </div>
+                    </div>
 
             </div>
+
+            <div class="modal-footer" id="signupModalBottom">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="profile-submit" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </form>
+
+            <div class="modal-footer" id="signupModalBottom">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="profile-submit" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </form>
         </div>
     </div>
+</div>
+
 
     <div id="fullpage">
 
@@ -386,6 +393,7 @@
                     <div class="col s12 m12 l4 offset-l4">
                         <div class="intro">
                             <div class="card login-style" id="top-card">
+                                <form class="login">
                                 <div class="card-content">
                                     <div class="row">
                                         <span class="card-title">Profile Login</span>
@@ -401,7 +409,6 @@
 
                                             </div>
                                         </div>
-
                                         </form>
                                     </div>
                                 </div>
@@ -415,6 +422,7 @@
                                     </button>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -494,13 +502,17 @@
             </div>
         </div>
     </div>
+
 </main>
-<script type="text/javascript" src="assets/js/fullpage.js"></script>
-<script type="text/javascript" src="assets/js/examples.js"></script>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="assets/js/signup.js"></script>
+<script type="text/javascript" src="assets/js/login.js"></script>
 
 <script type="text/javascript">
 
