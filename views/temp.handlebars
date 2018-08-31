@@ -8,68 +8,11 @@
 	<meta name="description" content="fullPage fixed header and footer." />
 	<meta name="keywords" content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
 	<meta name="Resource-type" content="Document" />
-
-
-	<link rel="stylesheet" type="text/css" href="../dist/fullpage.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/fullpage.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/examples.css" />
 	<style>
-		/* Document styling
-	* --------------------------------------- */
-		html {
-			box-sizing: border-box;
-			-webkit-background-size: cover;
-			-moz-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-		}
-
-		*,
-		*:before,
-		*:after {
-			box-sizing: inherit;
-		}
-
-		body {
-			background: transparent;
-			font-family: Arial, Helvetica, sans-serif;
-			padding: 0 1.5em;
-			margin: 0 auto;
-			text-shadow: 1px 1px #000;
-			background-image: linear-gradient(to bottom right, #27fdf5, #f765b8);
-		}
-
-		#section2 li {
-			color: #fff;
-			text-shadow: 1px 1px #000;
-			width: 36em;
-			max-width: 100%;
-			line-height: 2em;
-			font-size: 28px;
-			margin: 0 auto;
-		}
-
-		#top-card,
-		#bottom-card {
-			background-image: linear-gradient(to bottom right, #f98dc9, #a8f6f8);
-			background: transparent !important;
-			border: none !important;
-		}
-
-		.card {
-			border: none !important;
-		}
-
-		.card-title,
-		.login-email,
-		.login-password,
-		.login-email::placeholder,
-		.login-password::placeholder {
-			color: #fff;
-			text-shadow: 1px 1px #000;
-		}
-
 		/* Style for our header texts
-	* --------------------------------------- */
-
+    * --------------------------------------- */
 		h1 {
 			font-size: 5em;
 			font-family: georgia, helvetica;
@@ -80,70 +23,16 @@
 
 		.intro p {
 			color: #fff;
-			text-shadow: 1px 1px #000;
-			width: 36em;
-			max-width: 100%;
-			line-height: 2em;
-			font-size: 28px;
-			margin: 0 auto;
 		}
 
 		/* Centered texts in each section
-	* --------------------------------------- */
+    * --------------------------------------- */
 		.section {
 			text-align: center;
 		}
 
-		/* Button Styling
-	* --------------------------------------- */
-
-		.modal-footer .btn {
-			margin: 0 !important;
-		}
-
-		#top-login-btn:hover,
-		#top-profile-modal:hover {
-			background: linear-gradient(to top left, #d7fffe, #a8f6f8);
-			box-shadow: 0 0.125em 0 #1b383b;
-		}
-
-		#btm-login-btn:hover,
-		#btm-profile-modal:hover {
-			background: linear-gradient(to top left, #f98dc9, #f765b8);
-			box-shadow: 0 0.125em 0 #1b383b;
-		}
-
-		#top-login-btn,
-		#top-profile-modal,
-		#btm-login-btn,
-		#btm-profile-modal {
-			font: bold;
-			background: transparent;
-			border-radius: 3em;
-		}
-
-		#top-login-btn:hover,
-		#top-profile-modal:hover,
-		#btm-login-btn:hover,
-		#btm-profile-modal:hover {
-			border: 2px solid #000;
-			opacity: 0.2;
-		}
-
-		#top-login-btn:visited,
-		#top-profile-modal:visited,
-		#btm-login-btn:visited,
-		#btm-profile-modal:visited {
-			background: transparent !important;
-			outline: none !important;
-		}
-
 		/* Fixed header and footer.
-	* --------------------------------------- */
-		nav {
-			background-color: transparent;
-		}
-
+    * --------------------------------------- */
 		#header,
 		#footer {
 			position: fixed;
@@ -166,68 +55,23 @@
 		}
 
 		/* Bottom menu
-	* --------------------------------------- */
+    * --------------------------------------- */
 		#infoMenu {
 			bottom: 80px;
-		}
-
-		/* Backgrounds for each slide
-	* --------------------------------------- */
-		#section0 {
-			background: transparent;
-		}
-
-		#section1 {
-			background-image: linear-gradient(to top right, #27fdf5, #f765b8);
-		}
-
-		#section2 {
-			background-image: linear-gradient(to bottom right, #27fdf5, #f765b8);
-		}
-
-		#section3 {
-			background-image: linear-gradient(to top right, #27fdf5, #f765b8);
 		}
 
 		#infoMenu li a {
 			color: #fff;
 			z-index: 999;
 		}
-
-		/* Main content centering
-    * --------------------------------------- */
-		.modal-backdrop {
-			z-index: -1;
-		}
-
-		.model-content {
-			margin-left: 10em !important;
-			margin-right: 10em !important;
-		}
-
-		#signupModalTop,
-		#signupModalMiddle,
-		#signupModalBottom {
-			background-color: #fff;
-			border-color: #fff !important;
-		}
-
-		#signupModalLabel {
-			color: #000;
-			text-shadow: 1px 1px rgb(185, 170, 170);
-			font-size: 2.25em;
-			text-align: center;
-		}
 	</style>
-
 	<!--[if IE]>
-		<script type="text/javascript">
-			 var console = { log: function() {} };
-		</script>
-	<![endif]-->
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
 </head>
 </style>
-
 <select id="demosMenu">
 	<option selected>Choose Demo</option>
 	<option id="jquery-adapter">jQuery adapter</option>
@@ -304,9 +148,14 @@
 	</div>
 
 </nav> --}}
+
+
 <main>
-	{{!--Modal div for profile creation goes here --------------------------------------------- --}}
-	<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
+
+
+
+	{{!-- Modal div for profile creation goes here --------------------------------------------- --}}
+	<div class="modal fade" id="signupModal" tainted="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header" id="signupModalTop">
@@ -423,81 +272,79 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	</div>
-	<div class="section" id="section1">
-		<div class="slide" id="slide1">
+
+
+		<div class="section" id="section1">
+
 			<div class="intro">
 				<h1>About Us</h1>
 				<p>
 					As proud gamers and dedicated developers, we do our very best to provide the gaming community with all the features we find
 					lacking on today's average social website. We are constantly enhancing Gamer Tagged with suggestions given to us by
-					you, the user, to create the optimal experience.</p>
+					you, the user, to create the optimal experience.
+				</p>
+			</div>
+
+		</div>
+
+		<div class="section" id="section2">
+			<div class="intro">
+				<h1>Gamer-Tagged</h1>
+				<p class="big">
+					<ul>
+						<h5>
+							<li>Signing up is too easy.</li>
+							<li>Your profile tells your own unique story.</li>
+							<li>You choose the games you love, and befriend others who love the same games.</li>
+							<li>It opens the door for the exchange of tips and tricks,</li>
+							<li>benefitting you and your newfound friends.</li>
+							<li>A like-minded gamer makes for a reliable teammate.</li>
+						</h5>
+					</ul>
 				</p>
 			</div>
 		</div>
-	</div>
-	<div class="section" id="section2">
-		<div class="intro">
-			<h1>Gamer-Tagged</h1>
-			<p class="big">
-				<ul>
-					<h5>
-						<li>Signing up is too easy.</li>
-						<li>Your profile tells your own unique story.</li>
-						<li>You choose the games you love, and befriend others who love the same games.</li>
-						<li>It opens the door for the exchange of tips and tricks,</li>
-						<li>benefitting you and your newfound friends.</li>
-						<li>A like-minded gamer makes for a reliable teammate.</li>
-					</h5>
-				</ul>
-			</p>
-			</p>
-		</div>
-	</div>
 
-	<div class="section" id="section3">
-		<div class="container">
-			<style type="text/css">
-			</style>
-			<div class="row main-content">
-				<div class="col s12 m12 l4 offset-l4">
-					<div class="intro">
-						<div class="card login-style" id="bottom-card">
-							<div class="card-content">
-								<div class="row">
-									<span class="card-title">Profile Login</span>
+		<div class="section" id="section3">
+			<div class="container">
+				<div class="row main-content">
+					<div class="col s12 m12 l4 offset-l4">
+						<div class="intro">
+							<div class="card login-style" id="bottom-card">
+								<div class="card-content">
 									<div class="row">
-										<div class="input-field col s12">
-											<input class="login-email" type="email" class="validate" placeholder="Email here...">
+										<span class="card-title">Profile Login</span>
+										<div class="row">
+											<div class="input-field col s12">
+												<input class="login-email" type="email" class="validate" placeholder="Email here...">
 
+											</div>
 										</div>
-									</div>
-									<div class="row">
-										<div class="input-field col s12">
-											<input class="login-password" type="password" class="validate" placeholder="Password here...">
+										<div class="row">
+											<div class="input-field col s12">
+												<input class="login-password" type="password" class="validate" placeholder="Password here...">
 
+											</div>
 										</div>
-									</div>
 
-									</form>
+									</div>
 								</div>
-							</div>
-							<div class="card-action bg-transparent loginBtn-style">
-								<button class="btn" type="submit" name="action" id="btm-login-btn">Submit
-									<i class="material-icons right">send</i>
-								</button>
-								<button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="btm-profile-modal">Create
-									Profile
-									<i class="material-icons right">send</i>
-								</button>
+								<div class="card-action bg-transparent loginBtn-style">
+									<button class="btn" type="submit" name="action" id="btm-login-btn">Submit
+										<i class="material-icons right">send</i>
+									</button>
+									<button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="btm-profile-modal">Create
+										Profile
+										<i class="material-icons right">send</i>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+
 	</div>
 
 </main>
@@ -511,13 +358,14 @@
 <script type="text/javascript" src="assets/js/signup.js"></script>
 <script type="text/javascript" src="assets/js/login.js"></script>
 <script type="text/javascript" src="assets/js/fullpage.js"></script>
+
+
 <script type="text/javascript">
-
-
 	var myFullpage = new fullpage('#fullpage', {
 		anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
 		navigation: true,
 		navigationPosition: 'right',
-		navigationTooltips: ['First page', 'Second page', 'Third page', 'Fourth page']
+		navigationTooltips: ['First page', 'Second page', 'Third page', 'Fourth page'],
+		licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE'
 	});
 </script>
