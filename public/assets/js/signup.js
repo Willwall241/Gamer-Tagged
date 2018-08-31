@@ -6,29 +6,28 @@ $(document).ready(function() {
   var lastNameInput = $("input#lastname-input");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
+  var gamerTag = $("input#xbox-input");
+  var psn = $("input#playstation-input");
+  var steamId = $("input#steam-input");
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
     event.preventDefault();
     var userData = {
-      username: userNameInput.val().trim(),
-      firstname: firstNameInput.val().trim(),
-      lastname: lastNameInput.val().trim(),
+      userName: userNameInput.val().trim(),
+      firstName: firstNameInput.val().trim(),
+      lastName: lastNameInput.val().trim(),
       email: emailInput.val().trim(),
-      password: passwordInput.val().trim()
+      password: passwordInput.val().trim(),
+      gamerTag: gamerTag.val().trim(),
+      psn: psn.val().trim(),
+      steam: steamId.val().trim()
     };
-
     if (!userData.email || !userData.password) {
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(
-      userData.username,
-      userData.firstname,
-      userData.lastname,
-      userData.email,
-      userData.password
-    );
+    signUpUser(userData);
     userNameInput.val("");
     firstNameInput.val("");
     lastNameInput.val("");
@@ -38,13 +37,11 @@ $(document).ready(function() {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(username, firstname, lastname, email, password) {
-    $.post("/api/signup", {
-      userName: username,
-      firstName: firstname,
-      lastName: lastname,
-      email: email,
-      password: password
+  function signUpUser(userData) {
+    return $.ajax({
+      url: "/api/signup/",
+      type: "POST",
+      data: userData
     })
       .then(function(data) {
         window.location.replace(data);

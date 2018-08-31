@@ -16,8 +16,7 @@ var handleFriendSearch = function() {
 
 var handleFriendAdd = function() {
   var friend = {
-    friendId: $friendAdd.val(),
-    userId: "2"
+    friendId: $friendAdd.val()
   };
   console.log(friend);
   API.addFriend(friend);
