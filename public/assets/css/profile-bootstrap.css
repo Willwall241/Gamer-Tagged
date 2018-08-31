@@ -22,6 +22,14 @@ body {
   text-shadow: 1px 1px #000;
 }
 
+.row {
+  margin-bottom: 1em !important;
+}
+
+.row .margin-edit {
+  margin-bottom: 0.25em !important;
+}
+
 #top-section {
   margin-top: 3em;
 }
