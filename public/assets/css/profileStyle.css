@@ -120,11 +120,11 @@ main {
 }
 
 .hf-color {
-  background-color: #381A57;
+  background-color: transparent;
 }
 
 .card-color {
-  background-color: #594170;
+  background-color: #fff;
   color: #9B93A3;
 }
 
@@ -220,10 +220,10 @@ margin-left: 250px !important;
 /* Modal Content */
 .modal-content {
   position: relative;
-  background-color: #594170;
+  background-color: #fff;
   margin: auto;
   padding: 0;
-  border: 1px solid #888;
+  border: none;
   width: 60%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;

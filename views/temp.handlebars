@@ -17,7 +17,6 @@
 	* --------------------------------------- */
         html {
             box-sizing: border-box;
-            background-image: linear-gradient(to bottom right, #27fdf5, #f765b8);
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -36,6 +35,7 @@
             padding: 0 1.5em;
             margin: 0 auto;
             text-shadow: 1px 1px #000;
+            background-image: linear-gradient(to bottom right, #27fdf5, #f765b8);
         }
 
         #section2 li {
@@ -97,6 +97,10 @@
 
         /* Button Styling
 	* --------------------------------------- */
+
+    .modal-footer .btn {
+        margin: 0 !important;
+    }
         #top-login-btn:hover,
         #top-profile-modal:hover {
             background: linear-gradient(to top left, #d7fffe, #a8f6f8);
@@ -136,6 +140,10 @@
 
         /* Fixed header and footer.
 	* --------------------------------------- */
+        nav {
+            background-color: transparent;
+        }
+
         #header,
         #footer {
             position: fixed;
@@ -161,6 +169,24 @@
 	* --------------------------------------- */
         #infoMenu {
             bottom: 80px;
+        }
+
+        /* Backgrounds for each slide
+	* --------------------------------------- */
+        #section0 {
+            background: transparent;
+        }
+
+        #section1 {
+            background-image: linear-gradient(to top right, #27fdf5, #f765b8);
+        }
+
+        #section2 {
+            background-image: linear-gradient(to bottom right, #27fdf5, #f765b8);
+        }
+
+        #section3 {
+            background-image: linear-gradient(to top right, #27fdf5, #f765b8);
         }
 
         #infoMenu li a {
@@ -484,7 +510,6 @@
 
     var myFullpage = new fullpage('#fullpage', {
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
-        sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
         navigation: true,
         navigationPosition: 'right',
         navigationTooltips: ['First page', 'Second page', 'Third page', 'Fourth page']
