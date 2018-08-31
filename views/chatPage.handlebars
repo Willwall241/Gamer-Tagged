@@ -8,13 +8,16 @@
     <meta name="description" content="fullPage fixed header and footer." />
     <meta name="keywords" content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
     <meta name="Resource-type" content="Document" />
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../dist/fullpage.css" />
     <link rel="stylesheet" type="text/css" href="examples.css" />
+    <link href="/public/assets/css/chat.css" rel="stylesheet" />
+
     <style>
         /* Document styling
 	* --------------------------------------- */
+
         html {
             box-sizing: border-box;
             -webkit-background-size: cover;
@@ -91,6 +94,7 @@
 
         /* Centered texts in each section
 	* --------------------------------------- */
+
         .section {
             text-align: center;
         }
@@ -98,9 +102,10 @@
         /* Button Styling
 	* --------------------------------------- */
 
-    .modal-footer .btn {
-        margin: 0 !important;
-    }
+        .modal-footer .btn {
+            margin: 0 !important;
+        }
+
         #top-login-btn:hover,
         #top-profile-modal:hover {
             background: linear-gradient(to top left, #d7fffe, #a8f6f8);
@@ -140,6 +145,7 @@
 
         /* Fixed header and footer.
 	* --------------------------------------- */
+
         nav {
             background-color: transparent;
         }
@@ -167,12 +173,14 @@
 
         /* Bottom menu
 	* --------------------------------------- */
+
         #infoMenu {
             bottom: 80px;
         }
 
         /* Backgrounds for each slide
 	* --------------------------------------- */
+
         #section0 {
             background: transparent;
         }
@@ -196,6 +204,7 @@
 
         /* Main content centering
     * --------------------------------------- */
+
         .modal-backdrop {
             z-index: -1;
         }
@@ -274,7 +283,8 @@
     <option id="vue-fullpage">Vue-fullpage component</option>
 </select>
 
-{{!-- <nav>
+{{!--
+<nav>
     <div id="header" class="col s12 nav-wrapper hf-color">
         <a href="#!" class="brand-logo">
             <i class="material-icons icon">videogame_asset</i>Gamer Tagged</a>
@@ -374,7 +384,7 @@
                     <button type="button" class="btn btn-primary">Send message</button>
 
                     {{!-- trying passport facebook --}}
-      <a class="btn btn-danger" href="/auth/facebook">Google+</a>
+                    <a class="btn btn-danger" href="/auth/facebook">Google+</a>
                 </div>
 
             </div>
@@ -393,9 +403,20 @@
                                     <div class="row">
                                         <span class="card-title">Profile Login</span>
                                         <div class="row">
+
+                                            <div id="gamerTaggedChat">
+                                                <h2>Gamer Tagged</h2>
+                                                <div id="chat-window">
+                                                    <div id="output"></div>
+                                                    <div id="feedback"></div>
+                                                </div>
+                                                <input id="handle" type="text" placeholder="Handle" />
+                                                <input id="message" type="text" placeholder="Message" />
+                                                <button id="send">Send</button>
+                                            </div>
+                                            {{!--
                                             <div class="input-field col s12">
                                                 <input class="login-email" type="email" class="validate" placeholder="Email here...">
-
                                             </div>
                                         </div>
                                         <div class="row">
@@ -412,94 +433,23 @@
                                     <button class="btn" type="submit" name="action" id="top-login-btn">Submit
                                         <i class="material-icons right">send</i>
                                     </button>
-                                    <button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="top-profile-modal">Create
-                                        Profile
+                                    <button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="top-profile-modal">Create Profile
                                         <i class="material-icons right">send</i>
                                     </button>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="section" id="section1">
-            <div class="slide" id="slide1">
-                <div class="intro">
-                    <h1>About Us</h1>
-                    <p>
-                        As proud gamers and dedicated developers, we do our very best to provide the gaming community with all the features we find
-                        lacking on today's average social website. We are constantly enhancing Gamer Tagged with suggestions
-                        given to us by you, the user, to create the optimal experience.</p>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="section" id="section2">
-            <div class="intro">
-                <h1>Gamer-Tagged</h1>
-                <p class="big">
-                    <ul>
-                        <h5>
-                            <li>Signing up is too easy.</li>
-                            <li>Your profile tells your own unique story.</li>
-                            <li>You choose the games you love, and befriend others who love the same games.</li>
-                            <li>It opens the door for the exchange of tips and tricks,</li>
-                            <li>benefitting you and your newfound friends.</li>
-                            <li>A like-minded gamer makes for a reliable teammate.</li>
-                        </h5>
-                    </ul>
-                </p>
-                </p>
-            </div>
-        </div>
 
-        <div class="section" id="section3">
-            <div class="container">
-                <style type="text/css">
-                </style>
-                <div class="row main-content">
-                    <div class="col s12 m12 l4 offset-l4">
-                        <div class="intro">
-                            <div class="card login-style" id="bottom-card">
-                                <div class="card-content">
-                                    <div class="row">
-                                        <span class="card-title">Profile Login</span>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input class="login-email" type="email" class="validate" placeholder="Email here...">
-
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input class="login-password" type="password" class="validate" placeholder="Password here...">
-
-                                            </div>
-                                        </div>
-
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="card-action bg-transparent loginBtn-style">
-                                    <button class="btn" type="submit" name="action" id="btm-login-btn">Submit
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                    <button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="btm-profile-modal">Create
-                                        Profile
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </main>
-<script type="text/javascript" src="assets/js/fullpage.js"></script>
-<script type="text/javascript" src="assets/js/examples.js"></script>
+{{!--
+<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script> --}}
+{{!-- <script type="text/javascript" src="assets/js/fullpage.js"></script>
+<script type="text/javascript" src="assets/js/examples.js"></script> --}}
+<script type="text/javascript" src="assets/js/chat.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -507,12 +457,12 @@
 
 <script type="text/javascript">
 
- 
 
-    var myFullpage = new fullpage('#fullpage', {
-        anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
-        navigation: true,
-        navigationPosition: 'right',
-        navigationTooltips: ['First page', 'Second page', 'Third page', 'Fourth page']
-    });
+
+    //var myFullpage = new fullpage('#fullpage', {
+    //    anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
+      //  navigation: true,
+        //navigationPosition: 'right',
+        //navigationTooltips: ['First page', 'Second page', 'Third page', 'Fourth page']
+    //});
 </script>
