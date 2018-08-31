@@ -22,7 +22,6 @@ module.exports = function(app) {
       db.User.findOne({
         where: { id: req.user }
       }).then(function(userData) {
-        console.log(userData.gamerTag);
         res.render("profile", { user: userData });
       });
       console.log("success");
@@ -38,6 +37,9 @@ module.exports = function(app) {
   app.get("/friends", function(req, res) {
     res.render("indexTest");
   });
+  app.get("/library", function(req, res) {
+    res.render("library");
+  });
 };
 
 // module.exports = function(app) {
@@ -49,10 +51,6 @@ module.exports = function(app) {
 //         examples: GTdb
 //       });
 //     });
-//   });
-
-//   app.get("/library", function(req, res) {
-//     res.render("library");
 //   });
 
 //   app.get("/splash", function(req, res) {
