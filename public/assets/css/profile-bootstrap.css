@@ -40,15 +40,20 @@ body {
   background: transparent;
 }
 
+#prof-pic {
+  margin-left: 1.5em;
+}
+
 #prof-information {
   color: #fff;
   text-shadow: 1px 1px #8dcdf9;
+  margin-top: 2em;
 }
 
 #prof-tags {
   color: #fff;
   text-shadow: 1px 1px #8dcdf9;
-  margin-top: 1em;
+  margin-top: 3em;
 }
 
 .prof-info {
@@ -59,6 +64,10 @@ body {
   font-size: 1.12em;
 }
 
+p .prof-tag {
+  text-align: center;
+}
+
 #profileModal {
   max-width: 100%;
 }
@@ -66,6 +75,10 @@ body {
 #edit-prof-pic {
   max-width: 128px;
   max-height: 128px;
+}
+
+#edit-prof-btn {
+  align-content: right;
 }
 
 #bottom-container {
