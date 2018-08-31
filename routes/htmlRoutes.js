@@ -33,6 +33,13 @@ module.exports = function(app) {
   app.get("/friends", function(req, res) {
     res.render("indexTest");
   });
+
+  // if profile is logged in
+  app.get("/profile", isAuthenticated, function(req, res) {
+    res.render("profile", {
+      user: req.user
+    });
+  });
 };
 
 // module.exports = function(app) {
