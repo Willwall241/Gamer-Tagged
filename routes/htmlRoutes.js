@@ -40,6 +40,9 @@ module.exports = function(app) {
   app.get("/library", function(req, res) {
     res.render("library");
   });
+  app.get("/chat", function(req, res) {
+    res.render("chatPage");
+  });
 };
 
 // module.exports = function(app) {
