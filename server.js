@@ -10,9 +10,6 @@ var passport = require("./config/passport");
 var flash = require("connect-flash");
 var PORT = process.env.PORT || 3000;
 
-var giantBombKey = process.env.GIANTBOMB_KEY;
-var steamKey = process.env.STEAM_SECRET;
-
 // Middleware
 var app = express();
 var cookieParser = require("cookie-parser");
@@ -76,8 +73,3 @@ db.sequelize.sync(syncOptions).then(function() {
     );
   });
 });
-
-// module.exports = io;
-module.exports = app;
-module.exports = giantBombKey;
-module.exports = steamKey;
