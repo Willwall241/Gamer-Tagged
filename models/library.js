@@ -1,13 +1,16 @@
 module.exports = function(sequelize, DataTypes) {
   var Library = sequelize.define("Library", {
-    userID: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     gameID: {
       type: DataTypes.STRING,
       allowNull: false
     }
   });
+  Library.associate = function(models) {
+    Library.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
   return Library;
 };

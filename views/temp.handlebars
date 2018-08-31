@@ -2,225 +2,225 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Fixed headers - fullPage.js</title>
-    <meta name="author" content="Alvaro Trigo Lopez" />
-    <meta name="description" content="fullPage fixed header and footer." />
-    <meta name="keywords" content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
-    <meta name="Resource-type" content="Document" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Fixed headers - fullPage.js</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage fixed header and footer." />
+	<meta name="keywords" content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
+	<meta name="Resource-type" content="Document" />
 
 
-    <link rel="stylesheet" type="text/css" href="../dist/fullpage.css" />
-    <link rel="stylesheet" type="text/css" href="examples.css" />
-    <style>
-        /* Document styling
+	<link rel="stylesheet" type="text/css" href="../dist/fullpage.css" />
+	<style>
+		/* Document styling
 	* --------------------------------------- */
-        html {
-            box-sizing: border-box;
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-        }
+		html {
+			box-sizing: border-box;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
 
-        *,
-        *:before,
-        *:after {
-            box-sizing: inherit;
-        }
+		*,
+		*:before,
+		*:after {
+			box-sizing: inherit;
+		}
 
-        body {
-            background: transparent;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 0 1.5em;
-            margin: 0 auto;
-            text-shadow: 1px 1px #000;
-            background-image: linear-gradient(to bottom right, #27fdf5, #f765b8);
-        }
+		body {
+			background: transparent;
+			font-family: Arial, Helvetica, sans-serif;
+			padding: 0 1.5em;
+			margin: 0 auto;
+			text-shadow: 1px 1px #000;
+			background-image: linear-gradient(to bottom right, #27fdf5, #f765b8);
+		}
 
-        #section2 li {
-            color: #fff;
-            text-shadow: 1px 1px #000;
-            width: 36em;
-            max-width: 100%;
-            line-height: 2em;
-            font-size: 28px;
-            margin: 0 auto;
-        }
+		#section2 li {
+			color: #fff;
+			text-shadow: 1px 1px #000;
+			width: 36em;
+			max-width: 100%;
+			line-height: 2em;
+			font-size: 28px;
+			margin: 0 auto;
+		}
 
-        #top-card,
-        #bottom-card {
-            background-image: linear-gradient(to bottom right, #f98dc9, #a8f6f8);
-            background: transparent !important;
-            border: none !important;
-        }
+		#top-card,
+		#bottom-card {
+			background-image: linear-gradient(to bottom right, #f98dc9, #a8f6f8);
+			background: transparent !important;
+			border: none !important;
+		}
 
-        .card {
-            border: none !important;
-        }
+		.card {
+			border: none !important;
+		}
 
-        .card-title,
-        .login-email,
-        .login-password,
-        .login-email::placeholder,
-        .login-password::placeholder {
-            color: #fff;
-            text-shadow: 1px 1px #000;
-        }
+		.card-title,
+		.login-email,
+		.login-password,
+		.login-email::placeholder,
+		.login-password::placeholder {
+			color: #fff;
+			text-shadow: 1px 1px #000;
+		}
 
-        /* Style for our header texts
-	* --------------------------------------- */
-
-        h1 {
-            font-size: 5em;
-            font-family: georgia, helvetica;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-
-        .intro p {
-            color: #fff;
-            text-shadow: 1px 1px #000;
-            width: 36em;
-            max-width: 100%;
-            line-height: 2em;
-            font-size: 28px;
-            margin: 0 auto;
-        }
-
-        /* Centered texts in each section
-	* --------------------------------------- */
-        .section {
-            text-align: center;
-        }
-
-        /* Button Styling
+		/* Style for our header texts
 	* --------------------------------------- */
 
-    .modal-footer .btn {
-        margin: 0 !important;
-    }
-        #top-login-btn:hover,
-        #top-profile-modal:hover {
-            background: linear-gradient(to top left, #d7fffe, #a8f6f8);
-            box-shadow: 0 0.125em 0 #1b383b;
-        }
+		h1 {
+			font-size: 5em;
+			font-family: georgia, helvetica;
+			color: #fff;
+			margin: 0;
+			padding: 0;
+		}
 
-        #btm-login-btn:hover,
-        #btm-profile-modal:hover {
-            background: linear-gradient(to top left, #f98dc9, #f765b8);
-            box-shadow: 0 0.125em 0 #1b383b;
-        }
+		.intro p {
+			color: #fff;
+			text-shadow: 1px 1px #000;
+			width: 36em;
+			max-width: 100%;
+			line-height: 2em;
+			font-size: 28px;
+			margin: 0 auto;
+		}
 
-        #top-login-btn,
-        #top-profile-modal,
-        #btm-login-btn,
-        #btm-profile-modal {
-            font: bold;
-            background: transparent;
-            border-radius: 3em;
-        }
-
-        #top-login-btn:hover,
-        #top-profile-modal:hover,
-        #btm-login-btn:hover,
-        #btm-profile-modal:hover {
-            border: 2px solid #000;
-            opacity: 0.2;
-        }
-
-        #top-login-btn:visited,
-        #top-profile-modal:visited,
-        #btm-login-btn:visited,
-        #btm-profile-modal:visited {
-            background: transparent !important;
-            outline: none !important;
-        }
-
-        /* Fixed header and footer.
+		/* Centered texts in each section
 	* --------------------------------------- */
-        nav {
-            background-color: transparent;
-        }
+		.section {
+			text-align: center;
+		}
 
-        #header,
-        #footer {
-            position: fixed;
-            height: 40px;
-            display: block;
-            width: 100%;
-            background: #fff;
-            z-index: 9;
-            text-align: center;
-            color: #000;
-            padding: 20px 0 0 0;
-        }
-
-        #header {
-            top: 0px;
-        }
-
-        #footer {
-            bottom: 0px;
-        }
-
-        /* Bottom menu
+		/* Button Styling
 	* --------------------------------------- */
-        #infoMenu {
-            bottom: 80px;
-        }
 
-        /* Backgrounds for each slide
+		.modal-footer .btn {
+			margin: 0 !important;
+		}
+
+		#top-login-btn:hover,
+		#top-profile-modal:hover {
+			background: linear-gradient(to top left, #d7fffe, #a8f6f8);
+			box-shadow: 0 0.125em 0 #1b383b;
+		}
+
+		#btm-login-btn:hover,
+		#btm-profile-modal:hover {
+			background: linear-gradient(to top left, #f98dc9, #f765b8);
+			box-shadow: 0 0.125em 0 #1b383b;
+		}
+
+		#top-login-btn,
+		#top-profile-modal,
+		#btm-login-btn,
+		#btm-profile-modal {
+			font: bold;
+			background: transparent;
+			border-radius: 3em;
+		}
+
+		#top-login-btn:hover,
+		#top-profile-modal:hover,
+		#btm-login-btn:hover,
+		#btm-profile-modal:hover {
+			border: 2px solid #000;
+			opacity: 0.2;
+		}
+
+		#top-login-btn:visited,
+		#top-profile-modal:visited,
+		#btm-login-btn:visited,
+		#btm-profile-modal:visited {
+			background: transparent !important;
+			outline: none !important;
+		}
+
+		/* Fixed header and footer.
 	* --------------------------------------- */
-        #section0 {
-            background: transparent;
-        }
+		nav {
+			background-color: transparent;
+		}
 
-        #section1 {
-            background-image: linear-gradient(to top right, #27fdf5, #f765b8);
-        }
+		#header,
+		#footer {
+			position: fixed;
+			height: 40px;
+			display: block;
+			width: 100%;
+			background: #fff;
+			z-index: 9;
+			text-align: center;
+			color: #000;
+			padding: 20px 0 0 0;
+		}
 
-        #section2 {
-            background-image: linear-gradient(to bottom right, #27fdf5, #f765b8);
-        }
+		#header {
+			top: 0px;
+		}
 
-        #section3 {
-            background-image: linear-gradient(to top right, #27fdf5, #f765b8);
-        }
+		#footer {
+			bottom: 0px;
+		}
 
-        #infoMenu li a {
-            color: #fff;
-            z-index: 999;
-        }
+		/* Bottom menu
+	* --------------------------------------- */
+		#infoMenu {
+			bottom: 80px;
+		}
 
-        /* Main content centering
+		/* Backgrounds for each slide
+	* --------------------------------------- */
+		#section0 {
+			background: transparent;
+		}
+
+		#section1 {
+			background-image: linear-gradient(to top right, #27fdf5, #f765b8);
+		}
+
+		#section2 {
+			background-image: linear-gradient(to bottom right, #27fdf5, #f765b8);
+		}
+
+		#section3 {
+			background-image: linear-gradient(to top right, #27fdf5, #f765b8);
+		}
+
+		#infoMenu li a {
+			color: #fff;
+			z-index: 999;
+		}
+
+		/* Main content centering
     * --------------------------------------- */
-        .modal-backdrop {
-            z-index: -1;
-        }
+		.modal-backdrop {
+			z-index: -1;
+		}
 
-        .model-content {
-            margin-left: 10em !important;
-            margin-right: 10em !important;
-        }
+		.model-content {
+			margin-left: 10em !important;
+			margin-right: 10em !important;
+		}
 
-        #signupModalTop,
-        #signupModalMiddle,
-        #signupModalBottom {
-            background-color: #fff;
-            border-color: #fff !important;
-        }
+		#signupModalTop,
+		#signupModalMiddle,
+		#signupModalBottom {
+			background-color: #fff;
+			border-color: #fff !important;
+		}
 
-        #signupModalLabel {
-            color: #000;
-            text-shadow: 1px 1px rgb(185, 170, 170);
-            font-size: 2.25em;
-            text-align: center;
-        }
-    </style>
+		#signupModalLabel {
+			color: #000;
+			text-shadow: 1px 1px rgb(185, 170, 170);
+			font-size: 2.25em;
+			text-align: center;
+		}
+	</style>
 
-    <!--[if IE]>
+	<!--[if IE]>
 		<script type="text/javascript">
 			 var console = { log: function() {} };
 		</script>
@@ -229,81 +229,83 @@
 </style>
 
 <select id="demosMenu">
-    <option selected>Choose Demo</option>
-    <option id="jquery-adapter">jQuery adapter</option>
-    <option id="active-slide">Active section and slide</option>
-    <option id="auto-height">Auto height</option>
-    <option id="autoplay-video-and-audio">Autoplay Video and Audio</option>
-    <option id="backgrounds">Background images</option>
-    <option id="backgrounds-fixed">Fixed fullscreen backgrounds</option>
-    <option id="background-video">Background video</option>
-    <option id="callbacks-v2-compatible">Callbacks version 2</option>
-    <option id="callbacks-v3">Callbacks version 3</option>
-    <option id="continuous-horizontal">Continuous horizontal</option>
-    <option id="continuous-vertical">Continuous vertical</option>
-    <option id="parallax">Parallax</option>
-    <option id="css3">CSS3</option>
-    <option id="drag-and-move">Drag And Move</option>
-    <option id="easing">Easing</option>
-    <option id="fading-effect">Fading Effect</option>
-    <option id="fixed-headers">Fixed headers</option>
-    <option id="gradient-backgrounds">Gradient backgrounds</option>
-    <option id="interlocked-slides">Interlocked Slides</option>
-    <option id="looping">Looping</option>
-    <option id="methods">Methods</option>
-    <option id="navigation-vertical">Vertical navigation dots</option>
-    <option id="navigation-horizontal">Horizontal navigation dots</option>
-    <option id="navigation-tooltips">Navigation tooltips</option>
-    <option id="no-anchor">No anchor links</option>
-    <option id="normal-scroll">Normal scrolling</option>
-    <option id="normalScrollElements">Normal scroll elements</option>
-    <option id="offset-sections">Offset sections</option>
-    <option id="one-section">One single section</option>
-    <option id="reset-sliders">Reset sliders</option>
-    <option id="responsive-auto-height">Responsive Auto Height</option>
-    <option id="responsive-height">Responsive Height</option>
-    <option id="responsive-width">Responsive Width</option>
-    <option id="responsive-slides">Responsive Slides</option>
-    <option id="scrollBar">Scroll bar enabled</option>
-    <option id="scroll-horizontally">Scroll horizontally</option>
-    <option id="scrollOverflow">Scroll inside sections and slides</option>
-    <option id="scrollOverflow-reset">ScrollOverflow Reset</option>
-    <option id="lazy-load">Lazy load</option>
-    <option id="scrolling-speed">Scrolling speed</option>
-    <option id="trigger-animations">Trigger animations</option>
-    <option id="vue-fullpage">Vue-fullpage component</option>
+	<option selected>Choose Demo</option>
+	<option id="jquery-adapter">jQuery adapter</option>
+	<option id="active-slide">Active section and slide</option>
+	<option id="auto-height">Auto height</option>
+	<option id="autoplay-video-and-audio">Autoplay Video and Audio</option>
+	<option id="backgrounds">Background images</option>
+	<option id="backgrounds-fixed">Fixed fullscreen backgrounds</option>
+	<option id="background-video">Background video</option>
+	<option id="callbacks-v2-compatible">Callbacks version 2</option>
+	<option id="callbacks-v3">Callbacks version 3</option>
+	<option id="continuous-horizontal">Continuous horizontal</option>
+	<option id="continuous-vertical">Continuous vertical</option>
+	<option id="parallax">Parallax</option>
+	<option id="css3">CSS3</option>
+	<option id="drag-and-move">Drag And Move</option>
+	<option id="easing">Easing</option>
+	<option id="fading-effect">Fading Effect</option>
+	<option id="fixed-headers">Fixed headers</option>
+	<option id="gradient-backgrounds">Gradient backgrounds</option>
+	<option id="interlocked-slides">Interlocked Slides</option>
+	<option id="looping">Looping</option>
+	<option id="methods">Methods</option>
+	<option id="navigation-vertical">Vertical navigation dots</option>
+	<option id="navigation-horizontal">Horizontal navigation dots</option>
+	<option id="navigation-tooltips">Navigation tooltips</option>
+	<option id="no-anchor">No anchor links</option>
+	<option id="normal-scroll">Normal scrolling</option>
+	<option id="normalScrollElements">Normal scroll elements</option>
+	<option id="offset-sections">Offset sections</option>
+	<option id="one-section">One single section</option>
+	<option id="reset-sliders">Reset sliders</option>
+	<option id="responsive-auto-height">Responsive Auto Height</option>
+	<option id="responsive-height">Responsive Height</option>
+	<option id="responsive-width">Responsive Width</option>
+	<option id="responsive-slides">Responsive Slides</option>
+	<option id="scrollBar">Scroll bar enabled</option>
+	<option id="scroll-horizontally">Scroll horizontally</option>
+	<option id="scrollOverflow">Scroll inside sections and slides</option>
+	<option id="scrollOverflow-reset">ScrollOverflow Reset</option>
+	<option id="lazy-load">Lazy load</option>
+	<option id="scrolling-speed">Scrolling speed</option>
+	<option id="trigger-animations">Trigger animations</option>
+	<option id="vue-fullpage">Vue-fullpage component</option>
 </select>
 
 {{!-- <nav>
-    <div id="header" class="col s12 nav-wrapper hf-color">
-        <a href="#!" class="brand-logo">
-            <i class="material-icons icon">videogame_asset</i>Gamer Tagged</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-            <i class="material-icons">menu</i>
-        </a>
-        <form class="right hide-on-med-and-down">
-            <div class="input-field">
-                <input placeholder="Find Other Gamers" id="search" type="search" required>
-                <label class="label-icon" for="search">
-                    <i class="material-icons">search</i>
-                </label>
-                <i class="material-icons">close</i>
-            </div>
-        </form>
-        <ul class="right hide-on-med-and-down">
-            <li>
-                <a href="profile.html">Profile</a>
-            </li>
-            <li>
-                <a href="library.html">Library</a>
-            </li>
-            <li>
-                <a href="ShareInfo.html">Share</a>
-            </li>
-        </ul>
-    </div>
+	<div id="header" class="col s12 nav-wrapper hf-color">
+		<a href="#!" class="brand-logo">
+			<i class="material-icons icon">videogame_asset</i>Gamer Tagged</a>
+		<a href="#" data-target="mobile-demo" class="sidenav-trigger">
+			<i class="material-icons">menu</i>
+		</a>
+		<form class="right hide-on-med-and-down">
+			<div class="input-field">
+				<input placeholder="Find Other Gamers" id="search" type="search" required>
+				<label class="label-icon" for="search">
+					<i class="material-icons">search</i>
+				</label>
+				<i class="material-icons">close</i>
+			</div>
+		</form>
+		<ul class="right hide-on-med-and-down">
+			<li>
+				<a href="profile.html">Profile</a>
+			</li>
+			<li>
+				<a href="library.html">Library</a>
+			</li>
+			<li>
+				<a href="ShareInfo.html">Share</a>
+			</li>
+		</ul>
+	</div>
+
 </nav> --}}
 <main>
+<<<<<<< HEAD
     {{!--Modal div for profile creation goes here --------------------------------------------- --}}
     <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
@@ -497,22 +499,222 @@
             </div>
         </div>
     </div>
+=======
+	{{!--Modal div for profile creation goes here --------------------------------------------- --}}
+	<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header" id="signupModalTop">
+					<h5 class="modal-title" id="signupModalLabel">Profile Creation</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="signupModalMiddle">
+					<form class="signup">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col col-s12 col-lg-6 d-flex align-items-stretch">
+									<div class="row">
+										<div class="col col-s12 col-lg-12">
+											<input type="text" class="form-control modal-text" id="firstname-input" placeholder="First Name...">
+										</div>
+
+										<div class="col col-s12 col-lg-12">
+											<input type="text" class="form-control modal-text" id="username-input" placeholder="Username...">
+										</div>
+
+										<div class="col col-s12 col-lg-12">
+											<input type="text" class="form-control modal-text" id="password-input" placeholder="Password...">
+										</div>
+									</div>
+								</div>
+
+								<div class="col col-s12 col-lg-6 d-flex align-items-stretch">
+									<div class="row">
+										<div class="col col-s12 col-lg-12">
+											<input type="text" class="form-control modal-text" id="lastname-input" placeholder="Last Name...">
+										</div>
+
+										<div class="col col-s12 col-lg-12">
+											<input type="text" class="form-control modal-text" id="email-input" placeholder="Email...">
+										</div>
+
+										<div class="col col-s12 col-lg-12">
+											<input type="text" class="form-control modal-text" placeholder="Confirm Password...">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row d-flex align-items-center">
+								<div class="col col-s-4 col-lg-4">
+									<input type="text" class="form-control modal-text" id="xbox-input" placeholder="Xbox Tag...">
+								</div>
+
+								<div class="col col-s-4 col-lg-4">
+									<input type="text" class="form-control modal-text" id="playstation-input" placeholder="PSN ID...">
+								</div>
+
+								<div class="col col-s-4 col-lg-4">
+									<input type="text" class="form-control modal-text" id="steam-input" placeholder="Steam ID...">
+								</div>
+
+							</div>
+						</div>
+
+				</div>
+
+				<div class="modal-footer" id="signupModalBottom">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="profile-submit" type="submit" class="btn btn-primary">Submit</button>
+				</div>
+				</form>
+
+				<div class="modal-footer" id="signupModalBottom">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="profile-submit" type="submit" class="btn btn-primary">Submit</button>
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="fullpage">
+
+		<div class="section" id="section0">
+			<div class="container d-flex">
+				<div class="row main-content">
+					<div class="col s12 m12 l4 offset-l4">
+						<div class="intro">
+							<div class="card login-style" id="top-card">
+								<form class="login">
+									<div class="form-group">
+										<label for="email-input">Email address</label>
+										<input type="email" class="form-control" id="email-login" placeholder="Email">
+									</div>
+									<div class="form-group">
+										<label for="password-input">Password</label>
+										<input type="password" class="form-control" id="password-login" placeholder="Password">
+									</div>
+									<button type="submit" class="btn btn-default">Login</button>
+								</form>
+								<br/>
+								<p>Or sign up <a href="/signup">here</a></p>
+							</div>
+						</div>
+						<div class="card-action bg-transparent loginBtn-style">
+							<button class="btn" type="submit" name="action" id="top-login-btn">Submit
+								<i class="material-icons right">send</i>
+							</button>
+							<button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="top-profile-modal">Create
+								Profile
+								<i class="material-icons right">send</i>
+							</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="section" id="section1">
+		<div class="slide" id="slide1">
+			<div class="intro">
+				<h1>About Us</h1>
+				<p>
+					As proud gamers and dedicated developers, we do our very best to provide the gaming community with all the features we find
+					lacking on today's average social website. We are constantly enhancing Gamer Tagged with suggestions given to us by
+					you, the user, to create the optimal experience.</p>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="section2">
+		<div class="intro">
+			<h1>Gamer-Tagged</h1>
+			<p class="big">
+				<ul>
+					<h5>
+						<li>Signing up is too easy.</li>
+						<li>Your profile tells your own unique story.</li>
+						<li>You choose the games you love, and befriend others who love the same games.</li>
+						<li>It opens the door for the exchange of tips and tricks,</li>
+						<li>benefitting you and your newfound friends.</li>
+						<li>A like-minded gamer makes for a reliable teammate.</li>
+					</h5>
+				</ul>
+			</p>
+			</p>
+		</div>
+	</div>
+
+	<div class="section" id="section3">
+		<div class="container">
+			<style type="text/css">
+			</style>
+			<div class="row main-content">
+				<div class="col s12 m12 l4 offset-l4">
+					<div class="intro">
+						<div class="card login-style" id="bottom-card">
+							<div class="card-content">
+								<div class="row">
+									<span class="card-title">Profile Login</span>
+									<div class="row">
+										<div class="input-field col s12">
+											<input class="login-email" type="email" class="validate" placeholder="Email here...">
+
+										</div>
+									</div>
+									<div class="row">
+										<div class="input-field col s12">
+											<input class="login-password" type="password" class="validate" placeholder="Password here...">
+
+										</div>
+									</div>
+
+									</form>
+								</div>
+							</div>
+							<div class="card-action bg-transparent loginBtn-style">
+								<button class="btn" type="submit" name="action" id="btm-login-btn">Submit
+									<i class="material-icons right">send</i>
+								</button>
+								<button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="btm-profile-modal">Create
+									Profile
+									<i class="material-icons right">send</i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+>>>>>>> a5ca9e798e788df8c9b024ab5f314d7ed559d898
 </main>
-<script type="text/javascript" src="assets/js/fullpage.js"></script>
-<script type="text/javascript" src="assets/js/examples.js"></script>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
+ crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="assets/js/signup.js"></script>
+<script type="text/javascript" src="assets/js/login.js"></script>
+<script type="text/javascript" src="assets/js/fullpage.js"></script>
 <script type="text/javascript">
 
  
 
-    var myFullpage = new fullpage('#fullpage', {
-        anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
-        navigation: true,
-        navigationPosition: 'right',
-        navigationTooltips: ['First page', 'Second page', 'Third page', 'Fourth page']
-    });
+	var myFullpage = new fullpage('#fullpage', {
+		anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
+		navigation: true,
+		navigationPosition: 'right',
+		navigationTooltips: ['First page', 'Second page', 'Third page', 'Fourth page']
+	});
 </script>

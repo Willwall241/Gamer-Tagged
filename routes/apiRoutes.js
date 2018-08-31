@@ -9,8 +9,8 @@ module.exports = function(app) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
-    console.log("apiRoutes: User Logged In");
-    res.json("/members");
+    console.log("apiRoutes: User Logged In " + req.user.id);
+    res.json("/");
   });
 
   app.get(
@@ -50,13 +50,7 @@ module.exports = function(app) {
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
     console.log(req.body);
-    db.User.create({
-      userName: req.body.userName,
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      password: req.body.password
-    })
+    db.User.create(req.body)
       .then(function() {
         res.redirect(307, "/api/login");
       })
@@ -137,7 +131,7 @@ module.exports = function(app) {
     console.log(req.body.userId);
     db.Friend.create({
       friendId: req.body.friendId,
-      UserId: req.body.userId
+      UserId: req.user.id
     }).then(function(GTdb) {
       res.json(GTdb);
     });
@@ -160,10 +154,32 @@ module.exports = function(app) {
   app.put("/api/status/", function(req, res) {
     db.User.update(req.body, {
       where: {
-        id: req.body.id
+        id: req.body.id,
+        UserId: req.user.id
       }
-    }).then(function(dbPost) {
-      res.json(dbPost);
+    }).then(function(GTdb) {
+      res.json(GTdb);
+    });
+  });
+
+  // edit profile
+  app.put("/api/edit/", function(req, res) {
+    db.User.update(req.body, {
+      where: {
+        id: req.user.id
+      }
+    }).then(function(GTdb) {
+      res.json(GTdb);
+    });
+  });
+
+  // Create a new game
+  app.post("/library", function(req, res) {
+    db.Library.create({
+      gameID: req.body.gameID,
+      userId: req.user.id
+    }).then(function(GTdb) {
+      res.json(GTdb);
     });
   });
 };
