@@ -8,8 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
-    <link rel="stylesheet" href="/assets/css/profileStyle.css">
+    {{!-- <link rel="stylesheet" href="/assets/css/profileStyle.css"> --}}
     <link rel="stylesheet" href="/assets/css/profile-bootstrap.css">
     <title>Gamer Tagged</title>
 </head>
@@ -58,7 +57,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col col-lg-4 d-flex align-items-stretch">
+                                <div class="col col-lg-4 d-flex align-items-left">
                                     <div class="row">
                                         <div class="col col-lg-12">
                                             <input type="text" class="form-control modal-text" placeholder="Xbox Tag...">
@@ -84,7 +83,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="top-section">
         <div class="row" id="prof-container">
             <div class="col col-lg-4">
                 <div class="row">
@@ -135,67 +134,13 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="bottom-section">
 
         <div class="row" id="bottom-container">
             <div class="col col-lg-5" id="wall-container">
                 <div class="row">
                     <div class="col col-lg-12">
                         <textarea id="status-area" form="status-textarea" placeholder="What would you like to tell everyone?"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-lg-3">
-                        <div class="row">
-                            <div class="col col-lg-12">
-                                <img class="wall-pic" src="profile-pic-transparent.png" alt="Skasaha (Granblue Fantasy)" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-lg-9">
-                        <div class="row">
-                            <div class="col col-lg-12">
-                                <p class="wall-text">William Scath<br /> August 29, 2018</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col col-lg-12">
-                        <p>Trick! Or! Treat! Now hand over the candy. What? What's wrong with what I said? I heard that I'll
-                            get candy as long as I say those words. Ah... So it's a choice between either pulling a prank
-                            or receiving a sweet. Very well! If no candy is granted to me, then I shall unleash my full-pranking
-                            fury upon you!</p>
-                    </div>
-                </div>
-                <div class="row" id="wall-react">
-                    <div class="col col-lg-2">
-                        <div class="row">
-                            <div class="col col-lg-12 d-flex justify-content-center">
-                                <p>&#x1F914</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-lg-2">
-                        <div class="row">
-                            <div class="col col-lg-12 d-flex justify-content-center">
-                                <p>&#x1F60D</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-lg-2">
-                        <div class="row">
-                            <div class="col col-lg-12 d-flex justify-content-center">
-                                <p>&#x1F525</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-lg-2">
-                        <div class="row">
-                            <div class="col col-lg-12 d-flex justify-content-center">
-                                <p>&#x1F616</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
