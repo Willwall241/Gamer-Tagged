@@ -12,7 +12,7 @@ module.exports = function(app) {
     if (req.user) {
       res.render("members");
     }
-    res.render("temp");
+    res.render("signup");
   });
 
   app.get("/login", function(req, res) {
@@ -26,7 +26,8 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function(req, res) {
-    res.render("profile");
+    res.render("members");
+    console.log(req.user);
   });
   app.get("/friends", function(req, res) {
     res.render("indexTest");
