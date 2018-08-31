@@ -81,7 +81,6 @@ $(document).on("click", "#add-game", function(event) {
   console.log(id);
 
   var library = {
-    userID: 1,
     gameID: id
   };
   API.saveGame(library);
@@ -106,7 +105,7 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "/library",
+      url: "/api/library",
       data: JSON.stringify(game)
     });
   },

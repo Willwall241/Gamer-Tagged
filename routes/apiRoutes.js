@@ -174,10 +174,11 @@ module.exports = function(app) {
   });
 
   // Create a new game
-  app.post("/library", function(req, res) {
+  app.post("/api/library", function(req, res) {
+    console.log(req.user);
     db.Library.create({
       gameID: req.body.gameID,
-      userId: req.user.id
+      UserId: req.user
     }).then(function(GTdb) {
       res.json(GTdb);
     });
