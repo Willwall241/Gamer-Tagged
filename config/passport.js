@@ -1,9 +1,29 @@
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 var GoogleStrategy = require("passport-google-oauth20").Strategy;
+var FacebookStrategy = require("passport-facebook").Strategy;
 
 var db = require("../models");
 
+passport.use(
+  new FacebookStrategy(
+    {
+      clientID: 682482918784174,
+      clientSecret: "fdb87be80604d199287fad69ee2ab6e7",
+      callbackURL: "http://localhost:3000/auth/facebook/callback"
+    },
+    function(accessToken, refreshToken, profile, cb) {
+      User.findOrCreate(
+        {
+          facebookId: profile.id
+        },
+        function(err, user) {
+          return cb(err, user);
+        }
+      );
+    }
+  )
+);
 passport.use(
   new GoogleStrategy(
     {
@@ -16,7 +36,7 @@ passport.use(
     function(accessToken, refreshToken, profile, done) {
       // passport callback function
       console.log("passport callback function fired:");
-      console.log(profile);
+      console.log(profile.id);
       return done(err, user);
     }
   )
