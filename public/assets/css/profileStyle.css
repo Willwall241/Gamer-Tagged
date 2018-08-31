@@ -18,7 +18,7 @@ padding: 0px !important;
   margin-left:15px;
 }
 body{
-  background-image: url(../images/milkyWay.jpg);
+  background-image: url("../images/milkyWay.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat:no-repeat;
@@ -95,7 +95,7 @@ body {
   min-height: 100vh;
   flex-direction: column;
   position: relative;
-  background-image: url(../images/milkyWay.jpg);
+  background-image: url("../images/milkyWay.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat:no-repeat;
