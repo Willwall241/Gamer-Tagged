@@ -141,8 +141,29 @@ module.exports = function(app) {
         id: req.body.id,
         UserId: req.user.id
       }
-    }).then(function(dbPost) {
-      res.json(dbPost);
+    }).then(function(GTdb) {
+      res.json(GTdb);
+    });
+  });
+
+  // edit profile
+  app.put("/api/edit/", function(req, res) {
+    db.User.update(req.body, {
+      where: {
+        id: req.user.id
+      }
+    }).then(function(GTdb) {
+      res.json(GTdb);
+    });
+  });
+
+  // Create a new game
+  app.post("/library", function(req, res) {
+    db.Library.create({
+      gameID: req.body.gameID,
+      userId: req.user.id
+    }).then(function(GTdb) {
+      res.json(GTdb);
     });
   });
 };

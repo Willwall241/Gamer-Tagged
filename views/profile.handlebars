@@ -28,7 +28,7 @@
                 <div class="modal-body">
                     <!--Beginning the body of the modal here, split into 2 columns;
     One for the picture and upload button, and the other one for the text fields-->
-                    <form>
+                    <form class="editProfile">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col col-lg-4">
@@ -48,26 +48,26 @@
                                 <div class="col col-lg-4 d-flex align-items-stretch">
                                     <div class="row">
                                         <div class="col col-lg-12">
-                                            <input type="text" class="form-control modal-text" placeholder="Name...">
+                                            <input type="text" class="form-control modal-text" id="firstName" placeholder="First Name">
                                         </div>
                                         <div class="col col-lg-12">
-                                            <input type="text" class="form-control modal-text" placeholder="Location...">
+                                            <input type="text" class="form-control modal-text" id="lastName" placeholder="Last Name">
                                         </div>
                                         <div class="col col-lg-12">
-                                            <textarea class="form-control modal-text" rows="2" placeholder="Bio..."></textarea>
+                                            <textarea class="form-control modal-text" rows="2" id="bio" placeholder="Bio..."></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col col-lg-4 d-flex align-items-stretch">
                                     <div class="row">
                                         <div class="col col-lg-12">
-                                            <input type="text" class="form-control modal-text" placeholder="Xbox Tag...">
+                                            <input type="text" class="form-control modal-text" id="gamerTag" placeholder="Xbox Tag...">
                                         </div>
                                         <div class="col col-lg-12">
-                                            <input type="text" class="form-control modal-text" placeholder="PSN ID...">
+                                            <input type="text" class="form-control modal-text" id="psn" placeholder="PSN ID...">
                                         </div>
                                         <div class="col col-lg-12">
-                                            <input type="text" class="form-control modal-text" placeholder="Steam ID...">
+                                            <input type="text" class="form-control modal-text" it="steam" placeholder="Steam ID...">
                                         </div>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
             </form>
@@ -89,7 +89,7 @@
             <div class="col col-lg-4">
                 <div class="row">
                     <div class="col col-lg-12 pb-3 d-flex justify-content-end">
-                        <img id="prof-pic" src="profile-pic-transparent.png" alt="Skasaha (Granblue Fantasy)" />
+                        <img id="prof-pic" src="assets/images/profile-placeholder.png" alt="Skasaha (Granblue Fantasy)" />
                     </div>
                 </div>
                 <div class="row">
@@ -101,7 +101,7 @@
             <div class="col col-lg-4 mt-4" id="prof-information">
                 <div class="row">
                     <div class="col col-lg-12">
-                        <p id="prof-name" class="prof-info">William Scath</p>
+                        <p id="prof-name" class="prof-info">{{user.firstName}}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -118,17 +118,17 @@
             <div class="col-lg-4 mt-5" id="prof-tags">
                 <div class="row">
                     <div class="col-lg-12">
-                        <p class="prof-tag">Xbox Tag: PlumpFishies</p>
+                        <p class="prof-tag">Xbox Tag: {{user.gamerTag}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <p class="prof-tag">PSN ID: PlumpFishies</p>
+                        <p class="prof-tag">PSN ID: {{user.psn}}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12 ">
-                        <p class="prof-tag">Steam ID: PlumpFishies</p>
+                        <p class="prof-tag">Steam ID: {{user.steam}}</p>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
                     <div class="col col-lg-3">
                         <div class="row">
                             <div class="col col-lg-12">
-                                <img class="wall-pic" src="profile-pic-transparent.png" alt="Skasaha (Granblue Fantasy)" />
+                                <img class="wall-pic" src="assets/images/mario-placeholder.jpg" alt="Skasaha (Granblue Fantasy)" />
                             </div>
                         </div>
                     </div>
