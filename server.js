@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var db = require("./models");
 var session = require("express-session");
+var socket = require('socket.io');
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 var flash = require("connect-flash");
@@ -27,6 +28,25 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Socket setup & pass server
+var io = socket(server);
+var socket = io.connect("http://localhost:3000/chat");
+io.on('connection', (socket) => {
+
+    console.log('made socket connection', socket.id);
+
+    // Handle chat event
+    socket.on('chat', function(data){
+        // console.log(data);
+        io.sockets.emit('chat', data);
+    });
+
+    // Handle typing event
+    socket.on('typing', function(data){
+        socket.broadcast.emit('typing', data);
+    });
+
+});
 // Handlebars
 app.engine(
   "handlebars",
@@ -60,6 +80,7 @@ db.sequelize.sync(syncOptions).then(function() {
   });
 });
 
+module.exports = io;
 module.exports = app;
 module.exports = giantBombKey;
 module.exports = steamKey;
