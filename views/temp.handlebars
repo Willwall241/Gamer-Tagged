@@ -40,7 +40,7 @@
 			display: block;
 			width: 100%;
 			background: #fff;
-			z-index: 9;
+			z-index: 1;
 			text-align: center;
 			color: #000;
 			padding: 20px 0 0 0;
@@ -62,9 +62,10 @@
 
 		#infoMenu li a {
 			color: #fff;
-			z-index: 999;
+			z-index: 1;
 		}
 	</style>
+
 	<!--[if IE]>
         <script type="text/javascript">
              var console = { log: function() {} };
@@ -218,18 +219,10 @@
 						</div>
 
 				</div>
-
-				<div class="modal-footer" id="signupModalBottom">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button id="profile-submit" type="submit" class="btn btn-secondary">Submit</button>
-					      <a class="btn btn-primary" href="/auth/facebook">Facebook</a>
-
-				</div>
-				</form>
-
 				<div class="modal-footer" id="signupModalBottom">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 					<button id="profile-submit" type="submit" class="btn btn-primary">Submit</button>
+					<a class="btn btn-primary" href="/auth/facebook">Facebook</a>
 				</div>
 				</form>
 			</div>
@@ -239,7 +232,7 @@
 
 	<div id="fullpage">
 
-		<div class="section" id="section0">
+		<div class="section" id="section1">
 			<div class="container d-flex">
 				<div class="row main-content">
 					<div class="col s12 m12 l4 offset-l4">
@@ -276,7 +269,7 @@
 		</div>
 
 
-		<div class="section" id="section1">
+		<div class="section" id="section2">
 
 			<div class="intro">
 				<h1>About Us</h1>
@@ -289,7 +282,7 @@
 
 		</div>
 
-		<div class="section" id="section2">
+		<div class="section" id="section3">
 			<div class="intro">
 				<h1>Gamer-Tagged</h1>
 				<p class="big">
@@ -307,7 +300,7 @@
 			</div>
 		</div>
 
-		<div class="section" id="section3">
+		<div class="section" id="section4">
 			<div class="container">
 				<div class="row main-content">
 					<div class="col s12 m12 l4 offset-l4">
@@ -361,11 +354,11 @@
 <script type="text/javascript" src="assets/js/login.js"></script>
 <script type="text/javascript" src="assets/js/fullpage.js"></script>
 
- 
+
 
 <script type="text/javascript">
 	var myFullpage = new fullpage('#fullpage', {
-		anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage'],
+		anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
 		navigation: true,
 		navigationPosition: 'right',
 		navigationTooltips: ['First page', 'Second page', 'Third page', 'Fourth page'],
