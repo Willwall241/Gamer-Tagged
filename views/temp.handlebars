@@ -11,7 +11,6 @@
 
 
     <link rel="stylesheet" type="text/css" href="../dist/fullpage.css" />
-    <link rel="stylesheet" type="text/css" href="examples.css" />
     <style>
         /* Document styling
 	* --------------------------------------- */
@@ -170,28 +169,28 @@
 
         /* Main content centering
     * --------------------------------------- */
-    .modal-backdrop {
-  z-index: -1;
-}
-.model-content {
-    margin-left: 10em !important;
-    margin-right: 10em !important;
-}
+        .modal-backdrop {
+            z-index: -1;
+        }
 
-#signupModalTop,
-#signupModalMiddle,
-#signupModalBottom {
-    background-color: #fff;
-    border-color: #fff !important;
-}
+        .model-content {
+            margin-left: 10em !important;
+            margin-right: 10em !important;
+        }
 
-#signupModalLabel {
-    color: #000;
-    text-shadow: 1px 1px rgb(185, 170, 170);
-    font-size: 2.25em;
-    text-align: center;
-}
+        #signupModalTop,
+        #signupModalMiddle,
+        #signupModalBottom {
+            background-color: #fff;
+            border-color: #fff !important;
+        }
 
+        #signupModalLabel {
+            color: #000;
+            text-shadow: 1px 1px rgb(185, 170, 170);
+            font-size: 2.25em;
+            text-align: center;
+        }
     </style>
 
     <!--[if IE]>
@@ -279,78 +278,78 @@
 </nav>
 
 {{!--Modal div for profile creation goes here --------------------------------------------- --}}
-    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header" id="signupModalTop">
-                    <h5 class="modal-title" id="signupModalLabel">Profile Creation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="signupModalMiddle">
-                    <form>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col col-s12 col-lg-6 d-flex align-items-stretch">
-                                    <div class="row">
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupFirstName" placeholder="First Name...">
-                                        </div>
-
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupUserName" placeholder="Username...">
-                                        </div>
-
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupPassword" placeholder="Password...">
-                                        </div>
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" id="signupModalTop">
+                <h5 class="modal-title" id="signupModalLabel">Profile Creation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="signupModalMiddle">
+                <form class="signup">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col col-s12 col-lg-6 d-flex align-items-stretch">
+                                <div class="row">
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" id="firstname-input" placeholder="First Name...">
                                     </div>
-                                </div>
 
-                                <div class="col col-s12 col-lg-6 d-flex align-items-stretch">
-                                    <div class="row">
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupLastName" placeholder="Last Name...">
-                                        </div>
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" id="username-input" placeholder="Username...">
+                                    </div>
 
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupEmail" placeholder="Email...">
-                                        </div>
-
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupConfirmPass" placeholder="Confirm Password...">
-                                        </div>
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" id="password-input" placeholder="Password...">
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="row d-flex align-items-center">
-                                <div class="col col-s-4 col-lg-4">
-                                    <input type="text" class="form-control modal-text" id="signupXbox" placeholder="Xbox Tag...">
-                                </div>
+                            <div class="col col-s12 col-lg-6 d-flex align-items-stretch">
+                                <div class="row">
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" id="lastname-input" placeholder="Last Name...">
+                                    </div>
 
-                                <div class="col col-s-4 col-lg-4">
-                                    <input type="text" class="form-control modal-text" id="signupPSN" placeholder="PSN ID...">
-                                </div>
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" id="email-input" placeholder="Email...">
+                                    </div>
 
-                                <div class="col col-s-4 col-lg-4">
-                                    <input type="text" class="form-control modal-text" id="signupSteam" placeholder="Steam ID...">
+                                    <div class="col col-s12 col-lg-12">
+                                        <input type="text" class="form-control modal-text" placeholder="Confirm Password...">
+                                    </div>
                                 </div>
-
                             </div>
                         </div>
-                    </form>
-                </div>
 
-                <div class="modal-footer" id="signupModalBottom">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
-                </div>
+                        <div class="row d-flex align-items-center">
+                            <div class="col col-s-4 col-lg-4">
+                                <input type="text" class="form-control modal-text" id="xbox-input" placeholder="Xbox Tag...">
+                            </div>
+
+                            <div class="col col-s-4 col-lg-4">
+                                <input type="text" class="form-control modal-text" id="playstation-input" placeholder="PSN ID...">
+                            </div>
+
+                            <div class="col col-s-4 col-lg-4">
+                                <input type="text" class="form-control modal-text" id="steam-input" placeholder="Steam ID...">
+                            </div>
+
+                        </div>
+                    </div>
 
             </div>
+
+            <div class="modal-footer" id="signupModalBottom">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="profile-submit" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </form>
         </div>
     </div>
+</div>
 
 <div id="fullpage">
 
@@ -362,6 +361,7 @@
                         <div class="card login-style" id="top-card">
                             <div class="card-content">
                                 <div class="row">
+                                    <form class="login">
                                     <span class="card-title">Profile Login</span>
                                     <div class="row">
                                         <div class="input-field col s12">
@@ -388,6 +388,7 @@
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -469,12 +470,15 @@
     </div>
 </div>
 
-<script type="text/javascript" src="assets/js/fullpage.js"></script>
-<script type="text/javascript" src="assets/js/examples.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="assets/js/fullpage.js"></script>
+
+<script type="text/javascript" src="assets/js/signup.js"></script>
+<script type="text/javascript" src="assets/js/login.js"></script>
 
 <script type="text/javascript">
 
