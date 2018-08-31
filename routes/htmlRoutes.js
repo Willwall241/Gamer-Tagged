@@ -1,4 +1,4 @@
-// var db = require("../models");
+var db = require("../models");
 
 // Requiring path to so we can use relative routes to our HTML files
 // var path = require("path");
@@ -10,16 +10,21 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.render("profile");
+      res.redirect("/profile");
     } else {
       res.render("temp");
     }
   });
 
-  app.get("/profile", function(req, res) {
+  app.get("/profile", isAuthenticated, function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.render("profile");
+      db.User.findOne({
+        where: { id: req.user }
+      }).then(function(userData) {
+        console.log(userData.gamerTag);
+        res.render("profile", { user: userData });
+      });
       console.log("success");
     }
   });
@@ -32,13 +37,6 @@ module.exports = function(app) {
   });
   app.get("/friends", function(req, res) {
     res.render("indexTest");
-  });
-
-  // if profile is logged in
-  app.get("/profile", isAuthenticated, function(req, res) {
-    res.render("profile", {
-      user: req.user
-    });
   });
 };
 
