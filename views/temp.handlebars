@@ -305,201 +305,6 @@
 
 </nav> --}}
 <main>
-<<<<<<< HEAD
-    {{!--Modal div for profile creation goes here --------------------------------------------- --}}
-    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header" id="signupModalTop">
-                    <h5 class="modal-title" id="signupModalLabel">Profile Creation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="signupModalMiddle">
-                    <form>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col col-s12 col-lg-6 d-flex align-items-stretch">
-                                    <div class="row">
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupFirstName" placeholder="First Name...">
-                                        </div>
-
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupUserName" placeholder="Username...">
-                                        </div>
-
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupPassword" placeholder="Password...">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col col-s12 col-lg-6 d-flex align-items-stretch">
-                                    <div class="row">
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupLastName" placeholder="Last Name...">
-                                        </div>
-
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupEmail" placeholder="Email...">
-                                        </div>
-
-                                        <div class="col col-s12 col-lg-12">
-                                            <input type="text" class="form-control modal-text" id="signupConfirmPass" placeholder="Confirm Password...">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row d-flex align-items-center">
-                                <div class="col col-s-4 col-lg-4">
-                                    <input type="text" class="form-control modal-text" id="signupXbox" placeholder="Xbox Tag...">
-                                </div>
-
-                                <div class="col col-s-4 col-lg-4">
-                                    <input type="text" class="form-control modal-text" id="signupPSN" placeholder="PSN ID...">
-                                </div>
-
-                                <div class="col col-s-4 col-lg-4">
-                                    <input type="text" class="form-control modal-text" id="signupSteam" placeholder="Steam ID...">
-                                </div>
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="modal-footer" id="signupModalBottom">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
-
-                    {{!-- trying passport facebook --}}
-      <a class="btn btn-danger" href="/auth/facebook">Google+</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <div id="fullpage">
-
-        <div class="section" id="section0">
-            <div class="container d-flex">
-                <div class="row main-content">
-                    <div class="col s12 m12 l4 offset-l4">
-                        <div class="intro">
-                            <div class="card login-style" id="top-card">
-                                <div class="card-content">
-                                    <div class="row">
-                                        <span class="card-title">Profile Login</span>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input class="login-email" type="email" class="validate" placeholder="Email here...">
-
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input class="login-password" type="password" class="validate" placeholder="Password here...">
-
-                                            </div>
-                                        </div>
-
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="card-action bg-transparent loginBtn-style">
-                                    <button class="btn" type="submit" name="action" id="top-login-btn">Submit
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                    <button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="top-profile-modal">Create
-                                        Profile
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section" id="section1">
-            <div class="slide" id="slide1">
-                <div class="intro">
-                    <h1>About Us</h1>
-                    <p>
-                        As proud gamers and dedicated developers, we do our very best to provide the gaming community with all the features we find
-                        lacking on today's average social website. We are constantly enhancing Gamer Tagged with suggestions
-                        given to us by you, the user, to create the optimal experience.</p>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="section" id="section2">
-            <div class="intro">
-                <h1>Gamer-Tagged</h1>
-                <p class="big">
-                    <ul>
-                        <h5>
-                            <li>Signing up is too easy.</li>
-                            <li>Your profile tells your own unique story.</li>
-                            <li>You choose the games you love, and befriend others who love the same games.</li>
-                            <li>It opens the door for the exchange of tips and tricks,</li>
-                            <li>benefitting you and your newfound friends.</li>
-                            <li>A like-minded gamer makes for a reliable teammate.</li>
-                        </h5>
-                    </ul>
-                </p>
-                </p>
-            </div>
-        </div>
-
-        <div class="section" id="section3">
-            <div class="container">
-                <style type="text/css">
-                </style>
-                <div class="row main-content">
-                    <div class="col s12 m12 l4 offset-l4">
-                        <div class="intro">
-                            <div class="card login-style" id="bottom-card">
-                                <div class="card-content">
-                                    <div class="row">
-                                        <span class="card-title">Profile Login</span>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input class="login-email" type="email" class="validate" placeholder="Email here...">
-
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input class="login-password" type="password" class="validate" placeholder="Password here...">
-
-                                            </div>
-                                        </div>
-
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="card-action bg-transparent loginBtn-style">
-                                    <button class="btn" type="submit" name="action" id="btm-login-btn">Submit
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                    <button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="btm-profile-modal">Create
-                                        Profile
-                                        <i class="material-icons right">send</i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-=======
 	{{!--Modal div for profile creation goes here --------------------------------------------- --}}
 	<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
@@ -567,7 +372,9 @@
 
 				<div class="modal-footer" id="signupModalBottom">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button id="profile-submit" type="submit" class="btn btn-primary">Submit</button>
+					<button id="profile-submit" type="submit" class="btn btn-secondary">Submit</button>
+					      <a class="btn btn-primary" href="/auth/facebook">Facebook</a>
+
 				</div>
 				</form>
 
@@ -695,7 +502,6 @@
 	</div>
 	</div>
 
->>>>>>> a5ca9e798e788df8c9b024ab5f314d7ed559d898
 </main>
 
 

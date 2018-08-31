@@ -4,8 +4,8 @@ var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var db = require("./models");
 var session = require("express-session");
-var socket = require('socket.io');
-// Requiring passport as we've configured it
+var socket = require("socket.io");
+// Requiring passport as we"ve configured it
 var passport = require("./config/passport");
 var flash = require("connect-flash");
 var PORT = process.env.PORT || 3000;
@@ -30,22 +30,19 @@ app.use(passport.session());
 
 // Socket setup & pass server
 var io = socket(server);
-var socket = io.connect("http://localhost:3000/chat");
-io.on('connection', (socket) => {
+io.on("connection", function(socket) {
+  console.log("made socket", socket.id);
 
-    console.log('made socket connection', socket.id);
+  // Handle chat event
+  socket.on("chat", function(data) {
+    // console.log(data);
+    io.sockets.emit("chat", data);
+  });
 
-    // Handle chat event
-    socket.on('chat', function(data){
-        // console.log(data);
-        io.sockets.emit('chat', data);
-    });
-
-    // Handle typing event
-    socket.on('typing', function(data){
-        socket.broadcast.emit('typing', data);
-    });
-
+  // Handle typing event
+  socket.on("typing", function(data) {
+    socket.broadcast.emit("typing", data);
+  });
 });
 // Handlebars
 app.engine(
