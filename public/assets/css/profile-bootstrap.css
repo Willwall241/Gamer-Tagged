@@ -27,7 +27,7 @@ body {
 }
 
 .row .margin-edit {
-  margin-bottom: 0.25em !important;
+  margin-bottom: 0 !important;
 }
 
 #top-section {
@@ -94,6 +94,7 @@ body {
 
 #lib-search {
   width: 100%;
+  margin-bottom: 0 !important;
 }
 
 #current-lib-games {
@@ -102,11 +103,13 @@ body {
 
 #lib-game-list {
   line-height: 0.75em;
+  margin-bottom: 0 !important;
 }
 
 .lib-item {
   margin-top: 0.375em;
   margin-bottom: 0.375em;
+  text-align: center;
 }
 
 .lib-item-col:hover {
@@ -117,6 +120,10 @@ body {
 #icon {
   width: 100%;
   height: 7.5em;
+}
+
+.row .no-gutter {
+  margin-bottom: 0 !important;
 }
 
 .no-gutter > [class*='col-'] {
