@@ -26,6 +26,10 @@ body {
   overflow: hidden;
 }
 
+.card-background {
+  background-image: linear-gradient(to top right, #27fdf5,#f765b8) 
+}
+
 /* The code in between these comment lines were pulled from the main.handlebars page */
 h1 {
   font-size: 5em;
@@ -252,10 +256,6 @@ p .prof-tag {
 #lib-search {
   width: 100%;
   margin-bottom: 0 !important;
-}
-
-#current-lib-games {
-  border: 0.125em solid pink;
 }
 
 #lib-game-list {
