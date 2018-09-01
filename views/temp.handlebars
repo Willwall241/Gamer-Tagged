@@ -58,8 +58,8 @@
 
 <main>
 	{{!-- Modal div for profile creation goes here --------------------------------------------- --}}
-	<div class="modal fade modalRespon" id="signupModal" tainted="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
-		<div class="modal-dialog modal-sm modal-lg" role="document">
+	<div class="modal fade" id="signupModal" tainted="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header" id="signupModalTop">
 					<h5 class="modal-title" id="signupModalLabel">Profile Creation</h5>
@@ -71,67 +71,54 @@
 					<form class="signup">
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col col-s12 col-lg-6">
-
+								<div class="col col-s12 col-lg-6 d-flex align-items-stretch">
 									<div class="row">
 										<div class="col col-s12 col-lg-12">
 											<input type="text" class="form-control modal-text" id="firstname-input" placeholder="First Name...">
 										</div>
-									</div>
 
-									<div class="row">
 										<div class="col col-s12 col-lg-12">
 											<input type="text" class="form-control modal-text" id="username-input" placeholder="Username...">
 										</div>
-									</div>
 
-									<div class="row">
-										<div class="col col-s12 col-lg-12">
-											<input type="text" class="form-control modal-text" id="lastname-input" placeholder="Last Name...">
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="col col-s-12 col-lg-12">
-											<input type="text" class="form-control modal-text" id="xbox-input" placeholder="Xbox Tag...">
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="col col-s-12 col-lg-12">
-											<input type="text" class="form-control modal-text" id="playstation-input" placeholder="PSN ID...">
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="col col-s-12 col-lg-12">
-											<input type="text" class="form-control modal-text" id="steam-input" placeholder="Steam ID...">
-										</div>
-									</div>
-
-									<div class="row">
-										<div class="col col-s12 col-lg-12">
-											<input type="text" class="form-control modal-text" id="email-input" placeholder="Email...">
-										</div>
-									</div>
-
-									<div class="row">
 										<div class="col col-s12 col-lg-12">
 											<input type="text" class="form-control modal-text" id="password-input" placeholder="Password...">
 										</div>
 									</div>
+								</div>
 
+								<div class="col col-s12 col-lg-6 d-flex align-items-stretch">
 									<div class="row">
+										<div class="col col-s12 col-lg-12">
+											<input type="text" class="form-control modal-text" id="lastname-input" placeholder="Last Name...">
+										</div>
+
+										<div class="col col-s12 col-lg-12">
+											<input type="text" class="form-control modal-text" id="email-input" placeholder="Email...">
+										</div>
+
 										<div class="col col-s12 col-lg-12">
 											<input type="text" class="form-control modal-text" placeholder="Confirm Password...">
 										</div>
 									</div>
+								</div>
+
+
+								<div class="row d-flex align-items-center">
+									<div class="col col-s-4 col-lg-4">
+										<input type="text" class="form-control modal-text" id="xbox-input" placeholder="Xbox Tag...">
+									</div>
+
+									<div class="col col-s-4 col-lg-4">
+										<input type="text" class="form-control modal-text" id="playstation-input" placeholder="PSN ID...">
+									</div>
+
+									<div class="col col-s-4 col-lg-4">
+										<input type="text" class="form-control modal-text" id="steam-input" placeholder="Steam ID...">
+									</div>
 
 								</div>
 							</div>
-
-
-
 						</div>
 
 						<div class="modal-footer" id="signupModalBottom">
@@ -255,8 +242,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
  crossorigin="anonymous"></script>
-<script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script data-require="bootstrap@*" data-semver="3.3.6" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 <script type="text/javascript" src="assets/js/signup.js"></script>
 <script type="text/javascript" src="assets/js/login.js"></script>
