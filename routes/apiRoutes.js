@@ -144,9 +144,9 @@ module.exports = function(app) {
         UserId: req.user
       }
     }).then(function(GTdb) {
-
+      res.json(GTdb);
+    });
   });
-});
 
   // status change
   app.put("/api/status/", function(req, res) {
