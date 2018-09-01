@@ -1,23 +1,24 @@
 $(document).ready(function() {
   // for edit profile
-  // var $firstName = $("#firstName");
-  // var $lastName = $("#lastName");
-  // var $gamerTag = $("#gamerTag");
-  // var $psn = $("#psn");
-  // var $steam = $("#steam");
-  // var $status = $("#status");
+  var $firstName = $("#firstName");
+  var $lastName = $("#lastName");
+  var $gamerTag = $("#gamerTag");
+  var $psn = $("#psn");
+  var $steam = $("#steam");
+  var $status = $("#status");
+  var editProfile = $("form.editProfile");
 
-  // editProfile.on("submit", function() {
-  //   var user = {
-  //     firstName: $firstName.val().trim(),
-  //     lastName: $lastName.val().trim(),
-  //     gamerTag: $gamerTag.val().trim(),
-  //     psn: $psn.val().trim(),
-  //     steam: $steam.val().trim(),
-  //     status: $status.val().trim()
-  //   };
-  //   API.saveProfile(user);
-  // });
+  editProfile.on("submit", function() {
+    var user = {
+      firstName: $firstName.val().trim(),
+      lastName: $lastName.val().trim(),
+      gamerTag: $gamerTag.val().trim(),
+      psn: $psn.val().trim(),
+      steam: $steam.val().trim(),
+      status: $status.val().trim()
+    };
+    API.saveProfile(user);
+  });
 
   var API = {
     saveProfile: function(user) {
