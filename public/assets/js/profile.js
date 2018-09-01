@@ -50,8 +50,7 @@ $(document).ready(function() {
         var friends = data;
         for (i = 0; i < friends.length; i++) {
           var br = $("<br>");
-          var fullName =
-            friends[i].firstName + " " + friends[i].lastName;
+          var fullName = friends[i].firstName + " " + friends[i].lastName;
           $("#friend-dump").append(fullName);
           $("#friend-dump").append(br);
           if (friends[i].image !== null) {

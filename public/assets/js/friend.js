@@ -24,16 +24,12 @@ $(document).ready(function() {
             friendResults[i].firstName + " " + friendResults[i].lastName;
           $("#friend-div").append(fullName);
           $("#friend-div").append(br);
-          if (friendResults[i].image !== null) {
-            var img = $("<img>");
-            img.attr("src", friendResults[i].image);
-            $("#friend-div").append(br);
-            $("#friend-div").append(img);
-          }
+          var img = $("<img>");
+          img.attr("src", friendResults[i].image);
+          $("#friend-div").append(br);
+          $("#friend-div").append(img);
           var button = $("<button>add friend</button>");
-          button.val(
-            friendResults[i].firstName + " " + friendResults[i].lastName
-          );
+          button.val(friendResults[i].image);
           button.attr("id", "add-friend");
           $("#friend-div").append(br);
           $("#friend-div").append(button);
