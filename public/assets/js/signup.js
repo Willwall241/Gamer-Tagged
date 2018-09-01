@@ -21,7 +21,8 @@ $(document).ready(function() {
       password: passwordInput.val().trim(),
       gamerTag: gamerTag.val().trim(),
       psn: psn.val().trim(),
-      steam: steamId.val().trim()
+      steam: steamId.val().trim(),
+      image: "assets/images/profile-placeholder.jpg"
     };
     if (!userData.email || !userData.password) {
       return;

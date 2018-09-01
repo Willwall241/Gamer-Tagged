@@ -34,14 +34,14 @@ module.exports = function(app) {
     res.render("members");
     console.log(req.user);
   });
-  app.get("/friends", function(req, res) {
-    res.render("indexTest");
-  });
   app.get("/library", function(req, res) {
     res.render("library");
   });
   app.get("/chat", function(req, res) {
     res.render("chatPage");
+  });
+  app.get("/friends", function(req, res) {
+    res.render("friends");
   });
 };
 
