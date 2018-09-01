@@ -22,6 +22,10 @@ body {
   /* box-sizing: border-box; */
 }
 
+.cardSize {
+  overflow: hidden;
+}
+
 /* The code in between these comment lines were pulled from the main.handlebars page */
 h1 {
   font-size: 5em;
@@ -297,6 +301,9 @@ end profile-bootstrap.css */
 
 
 @media (max-width: 500px) {
+  .modalRespon {
+
+  }
   .brand-logo{
     right: 75px;
     width: 75%;
@@ -306,6 +313,9 @@ end profile-bootstrap.css */
 }
 
 @media (max-width: 400px) {
+  .modalRespon {
+
+  }
   .brand-logo{
     right: 75px;
     width: 75%;
@@ -315,6 +325,9 @@ end profile-bootstrap.css */
 }
 
 @media (max-width: 300px) {
+  .modalRespon {
+
+  }
   .brand-logo{
     right: 75px;
     width: 75%;

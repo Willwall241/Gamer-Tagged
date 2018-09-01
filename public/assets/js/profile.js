@@ -8,6 +8,7 @@ $(document).ready(function() {
   var $status = $("#status");
   var editProfile = $("form.editProfile");
 
+
   editProfile.on("submit", function() {
     var user = {
       firstName: $firstName.val().trim(),
@@ -39,6 +40,8 @@ $(document).ready(function() {
         for (i = 0; i < gameResults.length; i++) {
           var img = $("<img>");
           img.attr("src", gameResults[i].gameID);
+          img.attr("width", "256px");
+          img.attr("height", "256px");
           $("#lib-game-list").append(img);
         }
       });
