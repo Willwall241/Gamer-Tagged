@@ -31,7 +31,7 @@ function handleLibrarySearch() {
     // clear search array
     searchResults = [];
     for (i = 0; i < 10; i++) {
-      var guid = results[i].guid;
+      var imageId = results[i].image.small_url;
       //  game icon
       var gameImg = results[i].image.small_url;
       var image = $("<img src='" + gameImg + "' height='300px';width:auto/>");
@@ -55,7 +55,7 @@ function handleLibrarySearch() {
       //  add library button
       var newButton = $("<button>" + "add to library" + "</button>");
       newButton.attr("id", "add-game");
-      newButton.val(guid);
+      newButton.val(imageId);
       //  create a horizontal line
       var hr = $("<hr>");
       //  push game to search array

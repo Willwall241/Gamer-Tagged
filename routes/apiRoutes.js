@@ -114,41 +114,39 @@ module.exports = function(app) {
   });
 
   // for friend search
-  app.get("/api/friend/search/:name", function(req, res) {
-    db.User.findAll({
-      where: { firstName: req.params.name }
-    }).then(function(GTdb) {
-      data = {
-        friends: GTdb
-      };
-      res.render("indexTest", data);
-      console.log(data.friends);
-    });
-  });
+  // app.get("/api/friend/search/:name", function(req, res) {
+  //   db.User.findAll({
+  //     where: { firstName: req.params.name }
+  //   }).then(function(GTdb) {
+  //     data = {
+  //       friends: GTdb
+  //     };
+  //     res.render("indexTest", data);
+  //     console.log(data.friends);
+  //   });
+  // });
 
   // add friend
   app.post("/api/friend/add/", function(req, res) {
-    console.log(req.body.userId);
+    var id = req.body.friendId;
     db.Friend.create({
-      friendId: req.body.friendId,
-      UserId: req.user.id
+      friendId: id,
+      UserId: req.user
     }).then(function(GTdb) {
       res.json(GTdb);
     });
   });
 
   // display friend's list
-  app.get("/api/friend/list/:id", function(req, res) {
+  app.get("/api/friend/list", function(req, res) {
     db.Friend.findAll({
       where: {
-        UserId: req.params.id
-      },
-      include: [db.User]
+        UserId: req.user
+      }
     }).then(function(GTdb) {
-      console.log(GTdb);
-      res.json(GTdb);
-    });
+
   });
+});
 
   // status change
   app.put("/api/status/", function(req, res) {
@@ -158,6 +156,7 @@ module.exports = function(app) {
         UserId: req.user.id
       }
     }).then(function(GTdb) {
+      console.log(GTdb);
       res.json(GTdb);
     });
   });
@@ -179,6 +178,22 @@ module.exports = function(app) {
     db.Library.create({
       gameID: req.body.gameID,
       UserId: req.user
+    }).then(function(GTdb) {
+      res.json(GTdb);
+    });
+  });
+  app.get("/api/library", function(req, res) {
+    db.Library.findAll({
+      where: { UserId: req.user }
+    }).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // get friend
+  app.get("/api/friend/search/:name", function(req, res) {
+    db.User.findAll({
+      where: { firstName: req.params.name }
     }).then(function(GTdb) {
       res.json(GTdb);
     });

@@ -1,9 +1,10 @@
 $(document).ready(function() {
-  var $firstName = $("#firstName");
-  var $lastName = $("#lastName");
-  var $gamerTag = $("#gamerTag");
-  var $psn = $("#psn");
-  var $steam = $("#steam");
+  // for edit profile
+  // var $firstName = $("#firstName");
+  // var $lastName = $("#lastName");
+  // var $gamerTag = $("#gamerTag");
+  // var $psn = $("#psn");
+  // var $steam = $("#steam");
 
   // editProfile.on("submit", function() {
   //   var user = {
@@ -15,7 +16,6 @@ $(document).ready(function() {
   //   };
   //   API.saveProfile(user);
   // });
-  API.populateLibrary();
 
   var API = {
     saveProfile: function(user) {
@@ -27,25 +27,44 @@ $(document).ready(function() {
     },
 
     populateLibrary: function() {
+      console.log("populating...");
       return $.ajax({
         url: "/api/library/",
         type: "GET"
       }).then(function(data) {
-        console.log(data.results);
-        // var gameResults = data.results;
+        var gameResults = data;
+        for (i = 0; i < gameResults.length; i++) {
+          var img = $("<img>");
+          img.attr("src", gameResults[i].gameID);
+          $("#lib-game-list").append(img);
+        }
+      });
+    },
 
-        // $.ajax({
-        //   type: "GET",
-        //   dataType: "jsonp",
-        //   crossDomain: true,
-        //   jsonp: "json_callback",
-        //   url:
-        //     "https://www.giantbomb.com/api/game/" + result.gameID + "/?api_key=47d89cf2776025d8ace3e66e641a4eb8bd066fc5"
-        // }).then(function(data){
-
-        // })
+    populateFriendList: function() {
+      return $.ajax({
+        url: "/api/friend/list",
+        type: "GET"
+      }).then(function(data) {
+        console.log(data);
+        var friends = data;
+        for (i = 0; i < friends.length; i++) {
+          var br = $("<br>");
+          var fullName =
+            friends[i].firstName + " " + friends[i].lastName;
+          $("#friend-dump").append(fullName);
+          $("#friend-dump").append(br);
+          if (friends[i].image !== null) {
+            var img = $("<img>");
+            img.attr("src", friends[i].image);
+            $("#friend-dump").append(br);
+            $("#friend-dump").append(img);
+          }
+        }
       });
     }
   };
+  API.populateLibrary();
+  API.populateFriendList();
 });
 // https://www.giantbomb.com/api/game/[guid]/?api_key=[YOUR API KEY]

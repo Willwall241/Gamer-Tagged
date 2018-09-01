@@ -1,52 +1,61 @@
-// We need a way to retrieve user id after signing in
-// for this to fully work
+$(document).ready(function() {
+  // inputs
+  var $friendInput = $("#friend-input");
+  var $friendSearch = $("#friend-search");
 
-// inputs
-var $friendInput = $("#friend-input");
+  $friendSearch.on("click", function(event) {
+    event.preventDefault();
+    var name = $friendInput.val().trim();
+    console.log(name);
+    API.getFriend(name);
+  });
 
-// buttons
-var $friendSearch = $("#friend-submit");
-var $friendAdd = $("#add-friend-test");
-
-var handleFriendSearch = function() {
-  var name = $friendInput.val().trim();
-  console.log(name);
-  API.searchFriend(name);
-};
-
-var handleFriendAdd = function() {
-  var friend = {
-    friendId: $friendAdd.val()
+  var API = {
+    getFriend: function(name) {
+      return $.ajax({
+        url: "/api/friend/search/" + name,
+        type: "GET"
+      }).then(function(data) {
+        $("#friend-div").append(br);
+        var friendResults = data;
+        for (i = 0; i < friendResults.length; i++) {
+          var br = $("<br>");
+          var fullName =
+            friendResults[i].firstName + " " + friendResults[i].lastName;
+          $("#friend-div").append(fullName);
+          $("#friend-div").append(br);
+          if (friendResults[i].image !== null) {
+            var img = $("<img>");
+            img.attr("src", friendResults[i].image);
+            $("#friend-div").append(br);
+            $("#friend-div").append(img);
+          }
+          var button = $("<button>add friend</button>");
+          button.val(
+            friendResults[i].firstName + " " + friendResults[i].lastName
+          );
+          button.attr("id", "add-friend");
+          $("#friend-div").append(br);
+          $("#friend-div").append(button);
+        }
+      });
+    },
+    addFriend: function(name) {
+      return $.ajax({
+        url: "/api/friend/add/",
+        type: "POST",
+        data: name
+      }).then(function() {
+        console.log("friend added!");
+      });
+    }
   };
-  console.log(friend);
-  API.addFriend(friend);
-};
 
-var displayFriends = function() {
-  API.allFriends(2);
-};
-var API = {
-  searchFriend: function(name) {
-    return $.ajax({
-      url: "/api/friend/search/" + name,
-      type: "GET"
-    });
-  },
-  addFriend: function(friend) {
-    return $.ajax({
-      url: "/api/friend/add/",
-      type: "POST",
-      data: friend
-    });
-  },
-  allFriends: function(id) {
-    return $.ajax({
-      url: "/api/friend/list/" + id,
-      type: "GET"
-    });
-  }
-};
-
-$friendSearch.on("click", handleFriendSearch);
-$friendAdd.on("click", handleFriendAdd);
-displayFriends();
+  $(document).on("click", "#add-friend", function() {
+    var name = $(this).val();
+    var friend = {
+      name: name
+    };
+    API.addFriend(friend);
+  });
+});
