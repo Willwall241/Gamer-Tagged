@@ -22,7 +22,8 @@ $(document).ready(function() {
       gamerTag: gamerTag.val().trim(),
       psn: psn.val().trim(),
       steam: steamId.val().trim(),
-      image: "assets/images/profile-placeholder.jpg"
+      image: "assets/images/profile-placeholder.jpg",
+      status: "Update your status and let your friend's know what you're up to!"
     };
     if (!userData.email || !userData.password) {
       return;
