@@ -8,82 +8,8 @@
 	<meta name="description" content="fullPage fixed header and footer." />
 	<meta name="keywords" content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
 	<meta name="Resource-type" content="Document" />
-	<link rel="stylesheet" type="text/css" href="assets/css/fullpage.css" />
-	<link rel="stylesheet" href="assets/css/profileStyle.css">
-	<style>
-		/* Style for our header texts
-    * --------------------------------------- */
-		h1 {
-			font-size: 5em;
-			font-family: georgia, helvetica;
-			color: #fff;
-			margin: 0;
-			padding: 0;
-            margin-bottom: 0.25em;
-		}
-
-        .slider-text,
-        .slider-text li {
-            line-height: 2em;
-            font-size: 1.5em;
-            width: 36em;
-            margin: 0 auto;
-            color: #fff;
-            text-shadow: 1px 1px #000;
-        }
-
-		.intro p {
-			color: #fff;
-		}
-
-		/* Centered texts in each section
-    * --------------------------------------- */
-		.section {
-			text-align: center;
-		}
-
-		/* Fixed header and footer.
-    * --------------------------------------- */
-		#header,
-		#footer {
-			position: fixed;
-			height: 40px;
-			display: block;
-			width: 100%;
-			background: #fff;
-			z-index: 1;
-			text-align: center;
-			color: #000;
-			padding: 20px 0 0 0;
-		}
-
-		#header {
-			top: 0px;
-		}
-
-		#footer {
-			bottom: 0px;
-		}
-
-		/* Bottom menu
-    * --------------------------------------- */
-		#infoMenu {
-			bottom: 80px;
-		}
-
-		#infoMenu li a {
-			color: #fff;
-			z-index: 1;
-		}
-	</style>
-
-	<!--[if IE]>
-        <script type="text/javascript">
-             var console = { log: function() {} };
-        </script>
-    <![endif]-->
 </head>
-</style>
+
 <select id="demosMenu">
 	<option selected>Choose Demo</option>
 	<option id="jquery-adapter">jQuery adapter</option>
@@ -129,38 +55,6 @@
 	<option id="trigger-animations">Trigger animations</option>
 	<option id="vue-fullpage">Vue-fullpage component</option>
 </select>
-
-{{!-- <nav>
-	<div id="header" class="col s12 nav-wrapper hf-color">
-		<a href="#!" class="brand-logo">
-			<i class="material-icons icon">videogame_asset</i>Gamer Tagged</a>
-		<a href="#" data-target="mobile-demo" class="sidenav-trigger">
-			<i class="material-icons">menu</i>
-		</a>
-		<form class="right hide-on-med-and-down">
-			<div class="input-field">
-				<input placeholder="Find Other Gamers" id="search" type="search" required>
-				<label class="label-icon" for="search">
-					<i class="material-icons">search</i>
-				</label>
-				<i class="material-icons">close</i>
-			</div>
-		</form>
-		<ul class="right hide-on-med-and-down">
-			<li>
-				<a href="profile.html">Profile</a>
-			</li>
-			<li>
-				<a href="library.html">Library</a>
-			</li>
-			<li>
-				<a href="ShareInfo.html">Share</a>
-			</li>
-		</ul>
-	</div>
-
-</nav> --}}
-
 
 <main>
 	{{!-- Modal div for profile creation goes here --------------------------------------------- --}}
@@ -208,31 +102,32 @@
 										</div>
 									</div>
 								</div>
-							</div>
 
-							<div class="row d-flex align-items-center">
-								<div class="col col-s-4 col-lg-4">
-									<input type="text" class="form-control modal-text" id="xbox-input" placeholder="Xbox Tag...">
+
+								<div class="row d-flex align-items-center">
+									<div class="col col-s-4 col-lg-4">
+										<input type="text" class="form-control modal-text" id="xbox-input" placeholder="Xbox Tag...">
+									</div>
+
+									<div class="col col-s-4 col-lg-4">
+										<input type="text" class="form-control modal-text" id="playstation-input" placeholder="PSN ID...">
+									</div>
+
+									<div class="col col-s-4 col-lg-4">
+										<input type="text" class="form-control modal-text" id="steam-input" placeholder="Steam ID...">
+									</div>
+
 								</div>
-
-								<div class="col col-s-4 col-lg-4">
-									<input type="text" class="form-control modal-text" id="playstation-input" placeholder="PSN ID...">
-								</div>
-
-								<div class="col col-s-4 col-lg-4">
-									<input type="text" class="form-control modal-text" id="steam-input" placeholder="Steam ID...">
-								</div>
-
 							</div>
 						</div>
 
+						<div class="modal-footer" id="signupModalBottom">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button id="profile-submit" type="submit" class="btn btn-primary">Submit</button>
+							<a class="btn btn-primary" href="/auth/facebook">Facebook</a>
+						</div>
+					</form>
 				</div>
-				<div class="modal-footer" id="signupModalBottom">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button id="profile-submit" type="submit" class="btn btn-primary">Submit</button>
-					<a class="btn btn-primary" href="/auth/facebook">Facebook</a>
-				</div>
-				</form>
 			</div>
 		</div>
 	</div>
@@ -242,15 +137,29 @@
 
 
 		<div class="section" id="section1">
+			<div class="row">
+				<div class="col s8 offset-2">
+					<div class="card">
 
-			<div class="intro">
-				<h1>About Us</h1>
-				<p class="slider-text">
-					As proud gamers and dedicated developers, we do our very best to provide the gaming community with all the features we find
-					lacking on today's average social website. We are constantly enhancing Gamer Tagged with suggestions given to us by
-					you, the user, to create the optimal experience.
-				</p>
+						<span class="card-title"><h1>About Us</h1></span>
+
+						<div class="card-content">
+
+
+							<div class="intro">
+
+								<p>
+									As proud gamers and dedicated developers, we do our very best to provide the gaming community with all the features we find
+									lacking on today's average social website. We are constantly enhancing Gamer Tagged with suggestions given to us
+									by you, the user, to create the optimal experience.
+								</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
 			</div>
+
 
 		</div>
 
@@ -272,39 +181,50 @@
 			</div>
 		</div>
 
-		<div class="section" id="section3">
-			<div class="container d-flex">
+		<div class="section valign-wrapper" id="section3">
+			<div class="container">
 				<div class="row main-content">
-					<div class="col s12 m12 l4 offset-l4">
-						<div class="intro">
-							<div class="card login-style" id="top-card">
-								<form class="login">
-									<div class="form-group">
-										<label for="email-input">Email address</label>
-										<input type="email" class="form-control" id="email-login" placeholder="Email">
+					<div class="col s6 offset-s3">
+						<div class="row">
+							<div class="ool s12">
+								<div class="intro">
+
+									<div class="card-content " id="top-card">
+										<span class="card-title"><h3>LogIn</h3></span>
+										<form class="login">
+											<div class="row">
+												<div class="input-field col s12">
+													<label for="email-login">Email address</label>
+													<input type="email" class="form-control" id="email-login">
+												</div>
+											</div>
+											<div class="row">
+												<div class="input-field col s12">
+													<label for="password-login">Password</label>
+													<input type="password" class="form-control" id="password-login">
+												</div>
+											</div>
+											<div class="card-action bg-transparent loginBtn-style">
+												<button type="submit" class="btn btn-wave">Login</button>
+												<button class="btn" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="top-profile-modal">Create
+													Profile
+													<i class="material-icons right">send</i>
+												</button>
+											</div>
+
+										</form>
+
 									</div>
-									<div class="form-group">
-										<label for="password-input">Password</label>
-										<input type="password" class="form-control" id="password-login" placeholder="Password">
-									</div>
-									<button type="submit" class="btn btn-default">Login</button>
-								</form>
-								<br/>
-								<p>Or sign up <a href="/signup">here</a></p>
+
+								</div>
 							</div>
 						</div>
-						<div class="card-action bg-transparent loginBtn-style">
 
-							<button class="btn createBtn-style" type="submit" data-toggle="modal" data-target="#signupModal" name="action" id="top-profile-modal">Create
-								Profile
-								<i class="material-icons right">send</i>
-							</button>
-						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
+	</div>
 
 	</div>
 
@@ -315,7 +235,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
  crossorigin="anonymous"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 <script type="text/javascript" src="assets/js/signup.js"></script>
 <script type="text/javascript" src="assets/js/login.js"></script>
 <script type="text/javascript" src="assets/js/fullpage.js"></script>
