@@ -49,20 +49,23 @@
                     <input type="text" class="form-control modal-text" id="psn" placeholder="PSN ID...">
                   </div>
                   <div class="col col-lg-12">
-                    <input type="text" class="form-control modal-text" it="steam" placeholder="Steam ID...">
+                    <input type="text" class="form-control modal-text" id="steam" placeholder="Steam ID...">
                   </div>
                 </div>
               </div>
             </div>
 
           </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        
       </div>
+
+
     </div>
-    </form>
   </div>
 </div>
 
@@ -89,7 +92,8 @@
             <div class="row">
               <div class="col s12 ">
 
-                <button class="btn" type="submit" data-toggle="modal" data-target="#profileModal" name="action" id="edit-prof-btn">Edit Profile
+                <button class="btn" type="submit" data-toggle="modal" data-target="#profileModal" name="action" id="edit-prof-btn">Edit
+                  Profile
                   <i class="material-icons right">send</i>
                 </button>
               </div>
@@ -136,20 +140,22 @@
 
 <div class="container" id="bottom-section">
 
-  <div class="col col-lg-7" id="lib-container">
+  <div class="col s12" id="lib-container">
     <div class="row">
-      <div class=" col col-lg-4" id="current-lib-games">
+      <div class=" col s12" id="current-lib-games">
         <div class="row no-gutter">
 
           <div class="row" id="lib-game-list">
             {{!-- populates game library here --}}
           </div>
+
           <div class="row" class="friend-list">
             <h3>Friends List:</h3>
             <div id="friend-dump">
               {{!-- populates friend list here --}}
             </div>
           </div>
+
         </div>
       </div>
 
@@ -160,6 +166,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
- crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 <script src="assets/js/profile.js"></script>

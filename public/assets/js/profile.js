@@ -8,12 +8,6 @@ $(document).ready(function() {
   var $status = $("#status");
   var editProfile = $("form.editProfile");
 
-  $("#edit-prof-btn").on("click", function(event) {
-    event.preventDefault();
-    $("#profileModal").modal(options);
-  
-    })
-  });
 
   editProfile.on("submit", function() {
     var user = {
