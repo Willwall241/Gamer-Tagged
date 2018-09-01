@@ -9,7 +9,8 @@ $(document).ready(function() {
   var editProfile = $("form.editProfile");
 
 
-  editProfile.on("submit", function() {
+  $(document).on("click", "#profile-edit", function(event) {
+    event.preventDefault();
     var user = {
       firstName: $firstName.val().trim(),
       lastName: $lastName.val().trim(),
@@ -20,14 +21,17 @@ $(document).ready(function() {
     };
     API.saveProfile(user);
   });
-
+ 
   var API = {
     saveProfile: function(user) {
+      console.log("saving...");
       return $.ajax({
         url: "/api/edit/",
         type: "PUT",
         data: user
-      });
+      }).then(function(){
+        location.reload();
+      })
     },
 
     populateLibrary: function() {
@@ -42,6 +46,7 @@ $(document).ready(function() {
           img.attr("src", gameResults[i].gameID);
           img.attr("width", "256px");
           img.attr("height", "256px");
+          img.css("margin", "15px");
           $("#lib-game-list").append(img);
         }
       });
@@ -56,10 +61,11 @@ $(document).ready(function() {
         var friends = data;
         for (i = 0; i < friends.length; i++) {
           var br = $("<br>");
-          $("#friend-dump").append(br);
+          // $("#friend-dump").append(br);
           var img = $("<img>");
           img.attr("src", friends[i].image);
-          $("#friend-dump").append(br);
+          img.css("margin", "15px");
+          // $("#friend-dump").append(br);
           $("#friend-dump").append(img);
         }
       });

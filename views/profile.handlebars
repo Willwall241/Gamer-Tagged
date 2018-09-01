@@ -56,12 +56,12 @@
             </div>
 
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" id="profile-edit">Submit</button>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        
+
       </div>
 
 
@@ -74,7 +74,7 @@
 
     <div class="col s12">
       <div class="card blue-grey darken-1">
-        <div class="card-content white-text cardSize">
+        <div class="card-content white-text cardSize card-background">
           <span class="card-title">
             <div class="col col-lg-12">
               <p id="prof-name" class="prof-info">{{user.firstName}}</p>
@@ -141,21 +141,32 @@
 <div class="container" id="bottom-section">
 
   <div class="col s12" id="lib-container">
+
+
     <div class="row">
       <div class=" col s12" id="current-lib-games">
-        <div class="row no-gutter">
+        <div class="row">
+          <div class="col s6" >
+            <div class="card blue-grey darken-1">
+              <div class="card-content card-background" id="lib-game-list">
 
-          <div class="row" id="lib-game-list">
-            {{!-- populates game library here --}}
-          </div>
-
-          <div class="row" class="friend-list">
-            <h3>Friends List:</h3>
-            <div id="friend-dump">
-              {{!-- populates friend list here --}}
+                <h3>Game Library:</h3>
+                {{!-- populates game library here --}}
+              </div>
             </div>
           </div>
+          
+          <div class="col s6" class="friend-list">
+            <div class="card blue-grey darken-1">
+              <div class="card-content card-background">
 
+                <h3>Friends List:</h3>
+                <div id="friend-dump">
+                  {{!-- populates friend list here --}}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -164,9 +164,10 @@ module.exports = function(app) {
 
   // edit profile
   app.put("/api/edit/", function(req, res) {
+    console.log(req.body);
     db.User.update(req.body, {
       where: {
-        id: req.user.id
+        id: req.user
       }
     }).then(function(GTdb) {
       res.json(GTdb);
