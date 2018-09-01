@@ -49,8 +49,9 @@ $(document).ready(function() {
 
   $(document).on("click", "#add-friend", function() {
     var name = $(this).val();
+    console.log(name);
     var friend = {
-      name: name
+      image: name
     };
     API.addFriend(friend);
   });

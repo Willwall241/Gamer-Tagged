@@ -126,11 +126,12 @@ module.exports = function(app) {
   //   });
   // });
 
-  // add friend
+  // add friende
   app.post("/api/friend/add/", function(req, res) {
-    var id = req.body.friendId;
+    var id = req.body.image;
+    console.log(id);
     db.Friend.create({
-      friendId: id,
+      image: id,
       UserId: req.user
     }).then(function(GTdb) {
       res.json(GTdb);
