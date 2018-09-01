@@ -1,4 +1,4 @@
-var db = require("../models");
+// var db = require("../models");
 
 // Requiring path to so we can use relative routes to our HTML files
 // var path = require("path");
@@ -10,20 +10,16 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/profile");
+      res.render("profile");
     } else {
       res.render("temp");
     }
   });
 
-  app.get("/profile", isAuthenticated, function(req, res) {
+  app.get("/profile", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      db.User.findOne({
-        where: { id: req.user }
-      }).then(function(userData) {
-        res.render("profile", { user: userData });
-      });
+      res.render("profile");
       console.log("success");
     }
   });
@@ -37,12 +33,6 @@ module.exports = function(app) {
   app.get("/friends", function(req, res) {
     res.render("indexTest");
   });
-  app.get("/library", function(req, res) {
-    res.render("library");
-  });
-  app.get("/chat", function(req, res) {
-    res.render("chatPage");
-  });
 };
 
 // module.exports = function(app) {
@@ -54,6 +44,10 @@ module.exports = function(app) {
 //         examples: GTdb
 //       });
 //     });
+//   });
+
+//   app.get("/library", function(req, res) {
+//     res.render("library");
 //   });
 
 //   app.get("/splash", function(req, res) {
