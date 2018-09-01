@@ -1,9 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Friend = sequelize.define("Friend", {
-    friendId: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     image: {
       type: DataTypes.STRING,
       allowNull: true
