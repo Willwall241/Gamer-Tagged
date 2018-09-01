@@ -39,6 +39,8 @@ $(document).ready(function() {
         for (i = 0; i < gameResults.length; i++) {
           var img = $("<img>");
           img.attr("src", gameResults[i].gameID);
+          img.attr("width", "256px");
+          img.attr("height", "256px");
           $("#lib-game-list").append(img);
         }
       });
